@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>iVendix - Order Detail</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+	<link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../assets/css/glyphicons.css" rel="stylesheet">
+	
+	
+    <style>
+	.companyLogo{
+		max-width: 200px;
+		max-height: 200px;
+	}
+    </style>
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  </head>
+
+<!--- script includes are at bottom --->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+	<script src="../../js/jquery-ui-1.8.13.custom.min.js"></script>
+	<link href="../../jquery_ui_themes.1.8.13/ui-lightness/jquery-ui-1.8.13.custom.css">
+	<script src="../../js/divController.js"></script>
+
+
+  <script language="javascript">
+  	var divC=new $.divController();
+	
+
+	$(document).ready(function()
+		{
+			$(".write").show();
+			$(".read").hide();
+			//$("#searchdiv").draggable();
+		}
+	);
+
+
+function toggleOrderTypes()
+{
+	$("#openOrders").toggle();
+	$("#closedOrders").toggle();
+}
+
+function ShowCheckoutMode()
+{
+	$(".read").toggle();
+	$(".write").toggle();
+}
+
+function togglenav()
+{
+	$("#navigationDemo").toggle();
+	$(".sortbutton").toggleClass('btn-info');
+	
+}
+
+function toggleSettings()
+{
+	$("#checkoutPageSettings").toggle();
+}
+
+function toggleTransaction()
+{
+	$(".transactions").toggle();
+}	
+
+function toggleColorImage()
+{
+	$(".colorImage").toggle();
+}	
+function toggleItemImage()
+{
+	$(".itemImage").toggle();
+}	
+
+function toggleGridListView()
+{
+	$(".gridView").toggle();
+	$(".listView").toggle();
+}	
+
+function toggleHeader()
+{
+	$(".header").toggle();	
+}
+  </script>
+  
+  
+  
+  <body>
+
+
+      <div class="container-fluid">
+		<div class="row-fluid showMenu">
+		<div class="span2 companyLogo" id="companyLogo">
+			<img src="../../img/iVendix.png">
+		</div>
+		<div class="span10" id="appNavigation">
+		<ul class="nav nav-pills">
+				<li><a href="#"><i class="icon-home"></i> Home</a></li>
+				<li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Orders <b class="caret"></b></a>
+				  <ul class="dropdown-menu">
+					<li><a href="#" onclick="OrdersStep1()"><i class="icon-star-empty"></i> Create an Order</a></li>
+					<li><a href="newivendixrev5_Template.html">Create Order from a Template</a></li>
+					<li><a href="newivendixrev5_SSOF.html">iVendix Order Form</a></li>
+					<li class="divider"></li>
+					<li><a href="orderList1_a.html"><i class="icon-inbox "></i> Order Dashboard</a></li>
+					<li class="divider"></li>
+					<li><a href="#"><i class="icon-ok"></i> Check Inventory</a></li>
+				  </ul>
+				</li>
+				<li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-cog"></i> Admin <b class="caret"></b></a>
+				  <ul class="dropdown-menu">
+					<li><a href="#"><i class="icon-user"></i> My Profile</a></li>
+					<li><a href="#">User Profiles</a></li>
+					<li><a href="#">Company Profiles</a></li>
+					<li><a href="#">Language</a></li>
+				  </ul>
+				</li>
+				<li class="dropdown visible-desktop">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Messages <b class="caret"></b></a>
+				  <ul class="dropdown-menu">
+					<li><a href="#"><i class="icon-file"></i> Shared Files</a></li>
+					<li><a href="#">Posts</a></li>
+				  </ul>
+				</li>
+				<li class="dropdown visible-desktop">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Product Administration<b class="caret"></b></a>
+				  <ul class="dropdown-menu">
+					<li><a href="#">Catalogs, etc.</a></li>
+				  </ul>
+				</li>
+				<li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-question-sign "></i> Help<b class="caret"></b></a>
+				  <ul class="dropdown-menu">
+					<li><a href="#">Contact CenterStone</a></li>
+					<li><a href="#">Contact Client</a></li>
+					<li><a href="#">FAQs</a></li>
+				  </ul>
+				</li>
+				<li><a title="Close this session"><i class="icon-eject"></i> Exit</a></li>
+			</ul>
+			<ul class="nav nav-pills">
+				<li><a title="Create an Order" onclick="OrdersStep1()"><i class="icon-star-empty"></i> Create an Order</a></li>
+				<li><a title="Order Status and Information" href="orderList1_a.html"><i class="icon-inbox "></i> Order Dashboard</a></li>
+				<li><a title="Check Inventory"><i class="icon-ok"></i> Check Inventory</a></li>
+			</ul>
+		</div>
+		</div>
+	</div>
+
+
+
+<div class="container">
+	<div class="row span=8">
+
+<h4>Your order has been submitted to Williamson-Dickie Manufacturing Company</h4>
+
+<table class="table table-striped table-bordered table-condensed">
+<tbody><tr>
+	<th>Printable<br>View</th>
+	<th nowrap="">Order #</th>
+	<th>Dealer's<br>PO</th>
+	<th>Buyer</th>
+	<th>Store</th>
+	<th>Ship<br>Date</th>
+	<th>Cancel<br>Date</th>
+	<th>Total<br>Units</th>
+	<th>Order<br>Total</th>
+
+	
+	<th id="dwnldHead">Order Export</th>
+</tr>
+
+<tr>
+ 	<th nslick="PreviewDaWS(2000243)"><i class="icon-preview"></i></th>
+	<td>2000243</td>
+	<td>hitparade</td>
+	<td nowrap="">Default User</td>
+	<td>MICHAEL A KRATZ #1117 3558 WOODHAVEN ST SIMI VALLEY, CA 93063</td>
+	<td nowrap="">Nov 14, 2012</td>
+	<td nowrap=""></td>
+	<td nowrap="">2</td>
+	<td nowrap="">$ 22.04</td>
+	<td class="AC" title="Download Product Details"><a href="#" onclick="POProducts();return false;"><i class="icon-download"></a></td>
+</tr>
+</tbody>
+</table>
+
+<div class="AC">
+<h5>Thank you for your order. Please note a minimum of 2 days is applicable to processing all orders</h5>
+
+<p>This is a request for order and is not a binding contract. All prices, terms, and conditions 
+are subject to review and approval by both Williamson-Dickie Manufacturing Company and Michael A Kratz </p>
+
+<p class="small">Thank you for placing your order using iVendix.</p>
+<h5>To view additional information about this order, navigate to the Order Dashboard.</h5>
+</div>			
+
+
+	</div>
+</div>
+
+
+
+	</body>
+</html>
+

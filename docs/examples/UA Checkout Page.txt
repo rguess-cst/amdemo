@@ -1,0 +1,270 @@
+<table class="Edit_Tbl_XS2" id="LowerTable" width="100%" cellspacing="0" cellpadding="0">
+				<tbody><tr style="display:none">
+					<th class="Edit_Require">Store:</th>
+					<td colspan="3">
+						
+
+<select name="ffStoreID" id="ffStoreID" d="Store" iv="" it="S" class="FT" onchange="OC_ffStoreID(this,true)">
+
+	<option value="74442" sa="118609" sn="AUBURN UNIVERSITY-FOOTBALL" supid="0010993044" snum="" selected="">
+		AUBURN UNIVERSITY-FOOTBALL 651 Roosevelt Drive, Room 1071  -  Beard-Eaves Memorial Coli AUBURN AL 36831-0351
+	</option>
+
+</select>
+
+
+ 
+
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" valign="top">
+						<table class="Edit_Tbl_XS2" width="100%" cellspacing="0" cellpadding="0">
+						<tbody><tr>
+							<th class="AC" nowrap="">Billing Address</th>
+						</tr>
+						<tr>
+							<td class="AC">
+								
+<select name="ffBillAddrID" class="FT" it="S" iv="" onchange="OC_BillAddrID(this,true)" d="Billing Address" style="visibility:visible">
+		
+	<option value="118479" loc="AUBURN UNIVERSITY-FOOTBALL" add1="651 Roosevelt Drive, Room 1071  -" add2="" add3="" city="AUBURN" st="AL" zip="36831-0351" ctry="US" ph="(334) 844-9883" af="Def">AUBURN UNIVERSITY-FOOTBALL - (AUBURN,AL)</option>
+
+</select>
+
+							</td>
+						</tr>
+						<tr>
+							<td>
+								
+<table width="100%" cellspacing="0" cellpadding="0" class="Edit_Tbl_XS1" style="border:none;">
+	
+	<tbody><tr>
+		<td id="BillAddr">
+			
+<table class="Edit_Tbl_XS1" style="border:none;">
+<tbody><tr><td nowrap="">AUBURN UNIVERSITY-FOOTBALL ((334) 844-9883)</td></tr>
+<tr>
+	<td nowrap="">651 Roosevelt Drive, Room 1071  -</td>
+</tr>
+
+
+<tr>
+	<td nowrap="">AUBURN</td>
+</tr>
+
+<tr>
+	<td nowrap="">AL</td>
+</tr>
+
+<tr>
+	<td nowrap="">36831-0351</td>
+</tr>
+<tr>
+	<td nowrap="">US</td>
+</tr>
+</tbody></table>
+
+		</td>
+	</tr>
+</tbody></table>
+
+							</td>
+						</tr>
+						</tbody></table>
+					</td>
+
+					<td colspan="2" id="ShippingAddressTD0" valign="top">
+						<table class="Edit_Tbl_XS2" width="100%" cellspacing="0" cellpadding="0">
+						<tbody><tr>
+							<td width="33%">
+								
+								<input type="checkbox" id="SType" name="SType" onclick="ShipType(this)">Drop Ship
+								
+							</td>
+							<th width="33%" class="AC" nowrap="">
+								Shipping Address
+							</th>
+							<td width="33%">
+							&nbsp;
+							</td>
+						</tr>
+						<tr id="ShipKind_0">
+							<td colspan="3" class="AC">
+								
+	<select id="ffShpAddrID" name="ffShpAddrID" class="FT" d="Shipping Address" it="S" onchange="OC_ffShpAddrID(this,true)" style="visibility:visible">
+	
+	<option value="118609" selected="" san="0010993044" dbi="118479" loc="AUBURN UNIVERSITY-FOOTBALL" add1="651 Roosevelt Drive, Room 1071  -  Beard-Eaves Memorial Coli" add2="" add3="" city="AUBURN" st="AL" zip="36831-0351" ctry="US" ph="(334) 844-9883" af="Def">AUBURN UNIVERSITY-FOOTBALL - (651 Roosevelt Drive, Room 1071  -  Beard-Eaves Memorial Coli AUBURN,AL) - 0010993044</option>
+
+</select>
+							</td>
+						</tr>
+						<tr id="ShipKind_1" style="display:none">
+							
+							<td class="Edit_Require">
+								Attention/Name:
+							</td>
+							<td colspan="2">
+								
+<input type="text" id="ffAttention" name="ffAttention" disabled="true" size="30" maxlength="30" class="FT" d="Attention/Name" it="C" ri="1" ic="*~&gt;" lmx="30" onblur="OB_ffAttention(this)">
+<input type="hidden" name="ffDropAddressID" id="ffDropAddressID" value="null">
+
+							</td>
+							
+						</tr>
+						<tr id="ShippingAddressTD1"><td></td></tr>
+						<tr>
+							<td id="ShippingAddressTD2" colspan="3">
+								
+<table width="100%" cellspacing="0" cellpadding="0" class="Edit_Tbl_XS1" style="border:none;">
+
+<tbody><tr>
+	<td id="ShipAddr" style=""><table class="Edit_Tbl_XS1" style="border:none;"><tbody><tr><td>AUBURN UNIVERSITY-FOOTBALL ((334) 844-9883)</td></tr><tr><td>651 Roosevelt Drive, Room 1071  -  Beard-Eaves Memorial Coli</td></tr><tr><td>AUBURN</td></tr><tr><td>AL</td></tr><tr><td>36831-0351</td></tr><tr><td>US</td></tr></tbody></table></td>
+</tr>
+</tbody></table>
+
+							</td>
+						</tr>
+						</tbody></table>
+					</td>
+				</tr>
+
+				<tr>
+					<th nowrap="">Worksheet Name:</th>
+					<td colspan="3" id="WSNameTD">
+						
+<input type="text" name="ffWSLabel" value="" class="FT" size="60" maxlength="50">
+
+					</td>
+				</tr>
+
+
+			
+
+
+				<tr>
+					<th class="Edit_Require" title="PO Number/Name (for internal classification)">PO #:</th>
+					<td>
+						
+						
+<input type="text" name="ffDealersPO" value="" d="PO #" it="C" ri="1" ic=" `~!@#$%^&amp;*()_-+={}''|[]\:&lt;&gt;,.?/	" ndq="1" class="FT" size="12" maxlength="12" onblur="CheckDupPO(this)">
+
+						<input type="hidden" name="ffDealersPOLU" value="-1" lu="1" it="LU">
+					</td>
+					<th nowrap="">Department Code:</th>
+					<td>
+						
+<input type="text" name="ffDepartment" value="" d="Department Code" class="FT" size="12" maxlength="10">
+
+					</td>
+				</tr>
+				<tr>
+					<th nowrap="" class="Edit_Require">Ship Date:</th>
+					<td id="ShipDateTD">
+						
+<input type="button" id="bffShpPODate" name="bffShpPODate" d="Ship Date" it="C" ri="1" value="6/28/2013" onclick="OC_ffShpPODate(this,true)" class="calendarBut1"><input type="button" a="bffShpPODate" onclick="OC_ffShpPODate(this.previousSibling,true)" class="calendarBut2">
+<input type="hidden" id="ffShpPODate" name="ffShpPODate" value="6/28/2013">
+
+					</td>
+					<th class="Edit_Require" nowrap="">Cancel Date:</th>
+					<td>
+						
+<input d="Cancel Date" it="C" ri="0" type="button" id="bffCancelPODate" name="bffCancelPODate" value="7/28/2013" onclick="OC_ffCancelPODate(this,true)" class="calendarBut1"><input type="button" onclick="OC_ffCancelPODate(this.previousSibling,true)" class="calendarBut2">
+<input type="hidden" id="ffCancelPODate" name="ffCancelPODate" value="7/28/2013">
+
+					</td>
+				</tr>
+
+				<tr style="display:none;">
+					<th nowrap="" class="Edit_Require">Ship method:</th>
+					<td>
+						
+						
+							<input type="hidden" name="ffShpMethod" id="ffShpMethod" value="0">
+						
+					</td>
+				</tr>
+
+				
+			<input type="hidden" name="rPurchaseOption_cd" value="BD">
+		
+	<input type="hidden" name="Goods_AMT" value="9477.00">
+	<input type="hidden" name="Trans_ID" value="">
+	<input type="hidden" name="OrderType" value="WS">
+	<input type="hidden" name="URLPath" value="en-us.ivendix.dev">
+	<input type="hidden" name="tax_amt" value="0">
+	<input type="hidden" name="sh_amt" value="284.31">
+	<input type="hidden" name="ProcessPage" value="">
+	<input type="hidden" name="datasource" value="UA">
+
+					<tr>
+						<th>Shipment Method:</th>
+						<td colspan="3">
+							<select id="shippingMethod" name="shippingMethod" class="FT" d="Shipping Address" it="S" onchange="OC_ffShpAddrID(this,true)" style="visibility:visible">
+								<option value="1" selected="">Second Day Air </option>
+							</select>
+						</td>
+					</tr>
+	
+	
+					<tr>
+						<th>Terms:</th>
+						<td colspan="3">
+							Allotment
+							<input type="hidden" name="ffTermsCode" value="allotment">
+							<input type="hidden" name="fftrmsdscpct" value="0">
+							<input type="hidden" name="fftrmsid" value="0">
+							<input type="hidden" name="fftrmscustom" value="allotment">
+							<input type="hidden" name="fftrmdayrdate" value="0">
+						</td>
+					</tr>
+				
+
+				
+				<tr>
+					
+					<th class="Edit_Require">Sport:</th>
+					<td colspan="3">
+						<input type="text" name="ffCustomField_Sport" id="ffCustomField_Sport" maxlength="30" value="" class="FT" ri="1" it="C" d="Sport" ac="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789,">
+					</td>
+				</tr>
+
+				
+
+				<tr>
+					<td colspan="4">
+						<div style="padding-top: 5px;">
+							Please note: Once an order has been placed and is finalized, you will be prohibited from making changes or cancelling the order.
+								Please contact your Sports Marketing Customer Service Representative for changes or cancellations.<br><br>
+							All prices are subject to change without notice.<br><br>
+							**Under Armour does not guarantee same day shipment of Express orders.** <br>
+							<br>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td nowrap="" colspan="2" class="AC" style="display:none">
+						<span class="LittleLink" onclick="ShowAddr('SSI')">Special Shipping Instructions...</span>
+					</td>
+					<td nowrap="" colspan="2" class="AL" style="display:none">
+						<span class="LittleLink" onclick="ShowAddr('Com2Sup')">Additional comments...</span>
+					</td>
+				</tr>
+				<tr id="SSI" style="display:none;">
+					<th class="AC">Special<br>Shipping<br>Instructions</th>
+					<td colspan="3">
+						
+<textarea name="ffShpInsruct" cols="80" it="C" lmx="4000" rows="5" class="FTSELECT"></textarea>
+
+					</td>
+				</tr>
+				<tr id="Com2Sup">
+					<th class="AC">Additional<br>Comments</th>
+					<td colspan="3">
+						70 characters maximum length.  Your current length is <a id="Length2">0</a> characters.<br>
+<textarea name="ffNoteToSupplier" cols="80" ic="`~!@#$%^&amp;*()-_=+[]{}\|;':,.&lt;&gt;/" ndq="1" it="C" lmx="70" rows="4" d="Additional Comments" onkeyup="CheckLength(this,2, 70)" class="FTSELECT"></textarea>
+
+					</td>
+				</tr>
+				
+				</tbody></table>

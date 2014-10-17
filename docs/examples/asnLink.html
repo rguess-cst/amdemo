@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Advanced Ship Notice</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+	<link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../assets/css/glyphicons.css" rel="stylesheet">
+	
+	
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+  </head>
+
+<!--- script includes are at bottom --->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+	<script src="../../js/jquery-ui-1.8.13.custom.min.js"></script>
+	<link href="../../jquery_ui_themes.1.8.13/ui-lightness/jquery-ui-1.8.13.custom.css">
+	<script src="../../js/divController.js"></script>
+
+
+  <script language="javascript">
+
+	$(document).ready(function()
+		{
+			//$("#searchdiv").draggable();
+		}
+	);
+
+
+  </script>
+  
+  
+  
+  <body>
+				<div class="pull-right">
+					<div class="btn-group">
+					<button class="btn"><i class="icon-print" title="Print this document."></i></button>
+					<button class="btn"><i class="icon-file" title="Create a PDF."></i></button>
+					<button class="btn"><i class="icon-cog" title="PDF settings."></i></button>
+					</div>
+				</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<h4>Order Ship Notification</h4>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="span6">
+				<table class="table table-condensed table-bordered table-hover labelValuePair" id="CarrierTable">
+					<tbody>
+					<tr>
+						<th >Notification Date</th>
+						<td>
+							Dec 12, 2012
+						</td>
+					</tr>
+					<tr>
+						<th >Document Transmission Date</th>
+						<td>
+							Dec 12, 2012
+						</td>
+					</tr>
+					<tr>
+						<th colspan="2">Carrier Information</th>
+					</tr>
+					<tr>
+						<th>SCAC</th>
+						<td>FEG</td>
+					</tr>
+					<tr>
+						<th>Bill of Lading</th>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<th>Description</th>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<th>Order Number</th>
+						<td>591809</td>
+					</tr>
+					<tr>
+						<th>Ship To</th>
+						<td>
+							8000 York Rd<br> 
+							Baltimore,
+								MD 21252-0001 
+								<br>
+							US
+							&nbsp;
+						</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="span6">
+				<table class="table table-condensed table-bordered table-hover labelValuePair" id="PackageTable">
+					<tbody>
+					<tr>
+						<th colspan="2">Package Information</th>
+					</tr>
+						<tr>
+							<th>Package </th>
+							<th>Tracking Number</th>
+							<th>Freight Charge</th>
+							<th>Pack Code</th>
+							<th>Weight</th>
+							<th>Units</th>
+						</tr>
+						<tr>
+							<td>#PackageNumber#</td>
+							<td><a href="#">9612019145564496200655</a></td>
+							<td>#12.00#</td>
+							<td>#PackCode#</td>
+							<td>#Weight#</td>
+							<td>#Units#</td>
+						</tr>
+						<tr>
+							<td>#PackageNumber2#</td>
+							<td><a href="#">9612019145564496200699</a></td>
+							<td>#12.00#</td>
+							<td>#PackCode#</td>
+							<td>#Weight#</td>
+							<td>#Units#</td>
+						</tr>
+
+					</tbody>
+				</table>
+
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="span12">
+				
+		<table class="table table-bordered table-hover table-condensed" id="ProductTable">
+			<thead>
+			<tr>
+		        <th>Item Number</th>
+				<th>Product</th>
+		        <th>Color</th>
+		        <th>Color Code</th>
+		        <th>Size</th>
+		        <th>VSize</th>
+				<th class="upccol">UPC</th>
+				<th class="eancol" style="display: none;">EAN</th>
+				<th class="skucol">SKU</th>
+				<th class="prodkeycol" style="display: none;">Product Key</th>
+				<th>Status</th>
+				<th>Quantity</th>
+				<th>Price</th>
+				<th>Date</th>
+				<th>Note</th>
+			</tr>
+			</thead>
+			<tbody>
+					<tr>
+							<td class="product">1232817</td>
+							<td class="product">UA Escape LTWT 1/4 Zip II</td>
+							<td class="product">
+								Graphite, Graphite, Reflective 
+							</td>
+							<td>
+								GGR 
+							</td>
+							<td>
+								XL 
+							</td>
+							<td>
+								
+									&nbsp;
+								
+							</td>
+						
+						<td class="upccol">886781242583</td>
+						<td class="eancol" style="display: none;"></td>
+						<td class="skucol">1232817-041-XL</td>
+						<td class="prodkeycol" style="display: none;"></td>
+						<td>
+							Ordered
+						</td>
+						<td>1</td>
+						<td class="price">
+							$27.50 
+						</td>
+						<td>Dec 11, 2012</td>
+						<td>
+								&nbsp;
+						</td>
+					</tr>
+				
+					<tr>
+							<td>
+								&nbsp;&nbsp;&nbsp;&nbsp;
+							</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						
+						<td class="upccol">886781242583</td>
+						<td class="eancol" style="display: none;"></td>
+						<td class="skucol"></td>
+						<td class="prodkeycol" style="display: none;"></td>
+						<td>
+							
+							Shipped
+						</td>
+						<td>1</td>
+						<td>
+							
+								&nbsp;
+							
+						</td>
+						<td>Dec 12, 2012</td>
+						<td>
+								Tracking: <a href="#">9612019145564496200655</a> 
+						</td>
+					</tr>			
+			</tbody>
+		</table>
+
+			</div>
+		</div>
+		
+	
+
+			</div>
+		</div>
+
+<div class="alert">
+	Notes: HTML layout should match what is here.<br>
+	Tracking number can be a link to the shipper, the link can be found here:
+	shipvendors.trackingURL. That should make the tracking number a simple a href with target blank.<br>
+	For UPS, there is an AJAX call that happens, we should re-implement that functionality. There is no need to attempt to AJAX web services for other shippers.<br>
+	Icons at top should be self explanatory,this is a case where PDF could replace the window it is in, rather than a new one.<br>
+	Queries to get the ASN data should be the same, we will need new queries for the order header values.<br>
+	Supplier Options Settings for displaying UPC/SKU/EAN/SPK should all be obeyed in this screen
+</div>
+
+	</body>
+</html>
+

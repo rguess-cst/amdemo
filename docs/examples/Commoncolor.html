@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Common Color Entry</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+	<link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../assets/css/glyphicons.css" rel="stylesheet">
+
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+  </head>
+
+
+
+<!--- script includes are at bottom --->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+	<script src="../../js/jquery-ui-1.8.13.custom.min.js"></script>
+	<link href="../../jquery_ui_themes.1.8.13/ui-lightness/jquery-ui-1.8.13.custom.css">
+	<script src="../../js/divController.js"></script>
+
+
+  <script language="javascript">
+
+	$(document).ready(function()
+	{
+	$(".searches").hide();
+	$(".instory").hide();
+	$(".colorstory").hide();
+	$(".2nd").hide();
+
+		return;
+	}
+	);
+
+function showdata()
+{
+	$(".searches").show();
+	$(".dafields").hide();		
+}
+
+function instory()
+{
+	$(".instory").show();
+		
+}
+
+  </script>
+
+ 
+  <body>
+		
+<div class="container-fluid" id="ColorStoryPages_View">
+	<div class="row">
+		<div class="span12">
+			<h4>Common Color Assignment</h4>
+		</div>
+	</div>
+	<div class="row">
+		<div class="span12">
+			<p>Find your colors in the left column, when they are returned, simply select the common color you would like for your version of the color.</p>
+			<p>Save will occur when a common color is selected. To remove a common color assignment, select <span class="label">No Assignment</span></p>
+		</div>
+	</div>
+
+
+
+<div class="row-fluid" id="ColorStoryEditor" style="">	
+
+
+<table>
+<tbody><tr>
+	<td valign="top"> 
+		<table class="table">
+		<tbody><tr><td>			
+			<table id="SearchArea" class="table table table-hover">			
+			<tbody>		
+			<tr>
+				<th>Search for Colors</th>
+			</tr>
+			
+			<tr>
+				<td><input type="text" id="Color" placeholder="Color" value="" class="input-large srcField"></td>
+			</tr>
+			<tr>
+				<td><div class="btn-group" name="AndSearch" data-toggle="buttons-radio">
+					<button data-fn="setAndSearch" type="button" class="btn" value="1"><i class="icon-th"></i> AND</button>
+					<button data-fn="setAndSearch" type="button" class="btn active" value="0"><i class="icon-list"></i>OR</button>
+					</div>
+				</td>
+			</tr>
+			<tr>	
+				<td><input type="text" id="ColorCode" placeholder="Color Code" value="" class="input-large srcField"></td>
+			</tr>
+			<tr>	
+				<td><input class="btn btn-primary" type="button" value="Search" data-fn="searchColors"></td>
+			</tr>			
+			</tbody></table>
+		</td>	
+		</tr>
+		</tbody></table>
+	</td>
+	<td>
+		<table class="table">
+		<tbody>
+		<tbody><tr>
+			<th>Found Colors</th>
+		</tr>
+		
+		<tr>	
+			<td valign="top">
+				<div style="overflow:auto; min-width:300px;">
+					<table class="table table-hover table-striped" id="SearchedColors">
+					<tbody id="sortable2">	
+
+<tr>
+	<th>Color</th>		
+	<th>Color Code</th>	
+	<th class="selCC">Common Color</th>
+</tr>	
+
+	<tr data-id="4656">
+		<td>"RED,BLK,WHT"&nbsp;</td>
+		<td>20&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4656" data-fn="setCommonColor">
+<option value="0">No assignment</option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+	</tr>
+
+	<tr data-id="6500">
+		<td>Bintou Red&nbsp;</td>
+		<td>BRD&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6500" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+	</tr>
+
+	<tr data-id="4919">
+		<td>black/red&nbsp;</td>
+		<td>&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4919" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+	</tr>
+
+	<tr data-id="6963">
+		<td>Black/Red&nbsp;</td>
+		<td>017&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6963" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+	</tr>
+
+	<tr data-id="6169">
+		<td>Black/Red&nbsp;</td>
+		<td>BLK/RD&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6169" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+	</tr>
+
+	<tr data-id="6601">
+		<td>Black/White/Red&nbsp;</td>
+		<td>599&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6601" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+	</tr>
+
+	<tr data-id="6545">
+		<td>Blk/Fieryred/Bhrcl&nbsp;</td>
+		<td>093&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6545" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+	</tr>
+
+	<tr data-id="4838">
+		<td>Blk/Gry/Red&nbsp;</td>
+		<td>&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4838" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+	</tr>
+
+	<tr data-id="6205">
+		<td>BLK/RED&nbsp;</td>
+		<td>001&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6205" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+	</tr>
+
+	<tr data-id="6206">
+		<td>BLK/RED&nbsp;</td>
+		<td>019&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6206" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+	</tr>
+
+	<tr data-id="4839">
+		<td>Blk/Red/Blk&nbsp;</td>
+		<td>&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4839" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+	</tr>
+
+	<tr data-id="4840">
+		<td>Blk/Red/Gry&nbsp;</td>
+		<td>&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4840" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+	</tr>
+
+	<tr data-id="4844">
+		<td>Blk/Wht/Red&nbsp;</td>
+		<td>&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4844" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+	</tr>
+
+	<tr data-id="6209">
+		<td>BLK/WHT/RED&nbsp;</td>
+		<td>001&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6209" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+	</tr>
+
+	<tr data-id="6609">
+		<td>Blufde/Fieryred/S&nbsp;</td>
+		<td>463&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6609" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+	</tr>
+
+	<tr data-id="6546">
+		<td>Brint Blue/Fiery Red&nbsp;</td>
+		<td>405&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6546" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+	</tr>
+
+	<tr data-id="6562">
+		<td>Charcoal/Fiery Red&nbsp;</td>
+		<td>062&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6562" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+	</tr>
+
+	<tr data-id="6489">
+		<td>Cherry Red&nbsp;</td>
+		<td>HD&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6489" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+	</tr>
+
+	<tr data-id="5026">
+		<td>Choc/White/Red&nbsp;</td>
+		<td>&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="5026" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+	</tr>
+
+	<tr data-id="6741">
+		<td>Chrcl/Gllgry/Fieryred&nbsp;</td>
+		<td>072&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6741" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+	</tr>
+
+	<tr data-id="4486">
+		<td>Cranberry Red&nbsp;</td>
+		<td>26&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4486" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+	</tr>
+
+	<tr data-id="6705">
+		<td>Crystal Red/Positive Red Iridium&nbsp;</td>
+		<td>749&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6705" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+	</tr>
+
+	<tr data-id="6438">
+		<td>Dark Red&nbsp;</td>
+		<td>DKR&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6438" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6438 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6219">
+		<td>DKS/RED&nbsp;</td>
+		<td>025&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6219" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+	</tr>
+
+	<tr data-id="7120">
+		<td>Drip Red&nbsp;</td>
+		<td>DPR&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="7120" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+	</tr>
+
+	<tr data-id="6553">
+		<td>Fiery Red&nbsp;</td>
+		<td>485&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6553" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+	</tr>
+
+	<tr data-id="6628">
+		<td>Fieryred/Optcyllw/Blk&nbsp;</td>
+		<td>646&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6628" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+	</tr>
+
+	<tr data-id="7099">
+		<td>Flame Red&nbsp;</td>
+		<td>122&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="7099" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+	</tr>
+
+	<tr data-id="6610">
+		<td>Going Native Paintbrush Red&nbsp;</td>
+		<td>291&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6610" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+	</tr>
+
+	<tr data-id="4857">
+		<td>Gry/Blk/Red&nbsp;</td>
+		<td>&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4857" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+	</tr>
+
+	<tr data-id="6917">
+		<td>Jazzy Red&nbsp;</td>
+		<td>JZR&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6917" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+	</tr>
+
+	<tr data-id="6701">
+		<td>Navy/Red/White&nbsp;</td>
+		<td>465&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6701" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+	</tr>
+
+	<tr data-id="6624">
+		<td>Paintbrush Red&nbsp;</td>
+		<td>065&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6624" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+	</tr>
+
+
+
+</tbody>
+					</table>
+				</div>
+			</td>
+			
+			<td valign="top">
+				<div style="overflow:auto; height:600px; min-width:300px;">
+					<table class="table table-hover table-striped" id="SelectedColors">										
+					<tbody id="sortable1"></tbody>
+					</table>
+				</div>
+			</td>
+		</tr>
+		</tbody></table>
+	</td>
+</tr>
+</tbody></table>
+  
+
+
+
+
+<script type="text/template" id="template-colorRows">	
+<% var iconTr=model.iconTr,
+       iconRgt=model.iconRgt,
+	   items=model.items,
+	   fn_ccSelect=model.fn_ccSelect,
+	   imgPath=model.imgPath,
+	   ccDetails={ccs:model.ccDetails};
+%>
+<tr>
+	<th>Color</th>		
+	<th>Color Code</th>	
+	<th class="selCC">Common Color</th>
+	<th class="dspCC">Common Color</th>	
+	<th><%=model.toolhead%></th>
+</tr>	
+<%					
+_.each(items,function(item,idx){
+	ccDetails.Color_ID=item.Color_ID;
+	ccDetails.CommonColor_ID=item.CommonColor_ID;
+%>
+	<tr data-id="<%=item.Color_ID%>">
+		<td><%=item.Color%>&nbsp;</td>
+		<td><%=item.ColorCode%>&nbsp;</td>		
+		<td class="selCC"><%=fn_ccSelect(ccDetails)%>&nbsp;</td>
+		<td class="clrCC_<%=item.Color_ID%> dspCC"><%=item.CommonColor%>&nbsp;</td>		
+		<td>
+			<span class="<%=iconRgt%> addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="<%=iconTr%> delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+<%;})%>
+</script>
+
+
+
+<script type="text/template" id="template-CommonColorSelect">	 
+<select data-id="<%=m.Color_ID%>" data-fn="setCommonColor">
+<option value="0"></option>
+<% _.each(m.ccs,function(cc,i){
+	var sel= (cc.CommonColor_ID==m.CommonColor_ID) ? " selected " : "";
+	%>
+<option <%=sel%> value="<%=cc.CommonColor_ID%>"><%=cc.CommonColor%></option>
+<%;})%>
+</select>
+</script>
+
+
+<script type="text/template" id="template-catSelect">	 
+<select id="Catalog_ID" data-fn="changeCatalog">
+<option value="0">All Catalogs</option>
+<% _.each(m.rows,function(r,i){
+	m.catHash[r.Catalog_ID]=r.Catalog;
+%>
+<option data-active="1" value="<%=r.Catalog_ID%>"><%=r.Catalog%></option>
+<%;})%>
+</select>
+</script>
+
+
+
+<script type="text/template" id="template-ColorStoryList">	 
+<table class="table table-hover table-condensed">
+<tr>
+	<th>Color Story Name</th>	
+	<th>Catalog</th>	
+	<th>Created By</th>
+	<th>Edit Date</th>	
+	<th>Action</th>
+</tr>
+
+<%  var catalogText;
+	_.each(model.List,function(r,i){
+		catalogText=(r.Catalog=="") ? "Any" : r.Catalog;
+		%>			
+			<tr>			
+			<td><a data-fn="colorStoryEdit" data-id="<%=r.ColorStory_ID%>" data-mode="Edit" href="#"><%=r.ColorStoryName%></a></td>			
+			<td><%=catalogText%></td>
+			<td><%=r.FirstName%> <%=r.LastName%></td>
+			<td><%=dateFormat(new Date(r.LastEditDate),"mmm d, yyyy")%></td>		
+			<td><a href="#"><i data-fn="copyColorStory" data-id="<%=r.ColorStory_ID%>" class="icon-repeat"></i></a>&nbsp;
+			    <a href="#"><i data-fn="confirmDelColorStory" data-id="<%=r.ColorStory_ID%>" class="icon-trash"></i></a>
+			</td>				
+			</tr>
+	<%})%>
+<tr><td colspan="5"><input class="btn" type="button" value="New Color Story" data-fn="newColorStory"></td><tr>	
+</table>
+</script>
+
+	
+
+	<div class="loaderDisplay hidePdf processing-div hide" id="loadingDIV" style="left: 1280px; top: 695px; display: none;">
+		<div class="row">
+			<div class="span2 well">
+				<div class="progress progress-striped active">
+					<div class="bar" style="width: 100%;">Processing...</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="modalOverlay" class="black-overlay hidePdf"></div>
+	<div id="loadingDIVOverlay" class="black-overlay hidePdf" style="z-index: 3019 !important; top: 0px; height: 1390px; display: none;"></div>
+
+	<iframe id="WorkArea" class="hidePdf" name="WorkArea" width="100%" height="100%" scrolling="auto" frameborder="0" marginheight="0" marginwidth="0" src=""></iframe>
+	
+		<form id="sf_GoBack" method="post" action="/AppRoot/UserAdmin/ReloadApp.cfm">
+			<input type="hidden" name="User_ID" value="8649"> <input type="hidden" name="Gn_SupplierID" value="7615"> <input type="hidden" name="VerticalNet_Flg" value="1"> <input type="hidden" name="Going_Back" value="1">
+		</form>
+	
+
+</td></tr></tbody></table></div></div>
+
+  </body>
+</html>
+

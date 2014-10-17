@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>iVendix</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  </head>
+
+  <script language="javascript">
+function firemeup ()
+{
+	$("#start").show();
+	$("#directions").show();
+}
+  function colorlooktog()
+	{
+		$("#shipmentwindow").hide();
+		$("#colorlook").show();
+	}
+
+	function showorderopt(switchme)
+	{
+		runme(5);
+		$("#directions").hide();
+		$("#colorlook").hide();
+		$("#browse").hide();
+		$("#simple").hide();
+		$("#step4").show();
+		$("#shipmentwindow").show();
+		if (switchme==1)
+		{
+			$("#lineitementry").show();
+			$("#ordergridonly").hide();
+			$("#imagebasedsearching").hide();
+			$("#workbookview").hide();			
+		}
+		if (switchme==2)
+		{
+			$("#workbookview").hide();			
+			$("#lineitementry").hide();
+			$("#imagebasedsearching").show();
+			$("#ordergridonly").hide();
+		}
+		if (switchme==3)
+		{
+			$("#workbookview").hide();			
+			$("#lineitementry").hide();
+			$("#imagebasedsearching").hide();
+			$("#ordergridonly").hide();
+		}
+		if (switchme==4) //show the grid on top of product
+		{
+			$("#workbookview").hide();			
+			$("#ordergridonly").hide();
+			$("#singleproductselect").show();
+		}
+		if (switchme==5) //show the grid on top of product
+		{
+			$("#workbookview").hide();			
+			$("#ordergridonly").show();
+		}
+		if (switchme==6) //return from add to order
+		{
+			$("#workbookview").hide();			
+			$("#singleproductselect").hide();
+			$("#ordergridonly").hide();
+			$("#orderedcount").show();
+			$("#goodorderbutton").addClass("btn-success");
+			
+		}
+		if (switchme==7) //workbook view
+		{
+			$("#lineitementry").hide();
+			$("#imagebasedsearching").hide();
+			$("#singleproductselect").hide();
+			$("#ordergridonly").hide();
+			$("#orderedcount").hide();
+			$("#workbookview").show();			
+		}
+
+
+		if (switchme=='browseme')
+		{
+			$("#lineitementry").hide();
+			$("#directions").hide();
+		}
+
+	}
+
+	function runme(switchme)
+	{
+		if (switchme==1)
+		{
+			$("#start").hide();
+			$("#directions").hide();
+			$("#directions2").show();
+			$("#step2").show();
+			$("#catalogimage").show();
+			$("#shipmentwindowstart").show();
+		}
+		if (switchme==2)
+		{
+			$("#step2").hide();
+			$("#shipmentwindowstart").hide();
+			$("#shipmentwindow").show();
+			$("#step3").show();
+		}
+		if (switchme==3)
+		{
+			$("#step3").hide();
+			$("#step4").show();
+			$("#browse").show();
+		}
+		if (switchme==4)
+		{
+			$("#browse").hide();
+			$("#simple").show();
+		}
+		if (switchme==5)
+		{
+			$("#start").hide();
+			$("#directions").hide();
+			$("#directions2").hide();
+			$("#step2").hide();
+			$("#catalogimage").hide();
+			$("#shipmentwindowstart").hide();
+			$("#step3").hide();
+			$("#step4").hide();
+			$("#browse").hide();
+			$("#simple").hide();
+		}
+	}
+	
+  </script>
+  
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="#"><img src="../../img/UnderArmour.png" style="height: 40px;"></a>
+			<div class="nav-collapse">
+			  <ul class="nav">
+				<li><a href="#"><i class="icon-home icon-white"></i> Home</a></li>
+				<li class="dropdown active">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Orders <b class="caret"></b></a>
+				  <ul class="dropdown-menu">
+					<li><a href="#" onclick="firemeup()">Create a New Order</a></li>
+					<li><a href="#">Order Dashboard</a></li>
+					<li><a href="#"><i class="icon-search"></i> Order Search</a></li>
+					<li class="divider"></li>
+					<li><a href="#">Work In Progress</a></li>
+					<li class="divider"></li>
+					<li><a href="#">Download Order Form</a></li>
+				  </ul>
+				</li>
+				<li><a href="#">Check Inventory</a></li>
+				<li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-cog icon-white"></i> Admin <b class="caret"></b></a>
+				  <ul class="dropdown-menu">
+					<li><a href="#"><i class="icon-user"></i> My Profile</a></li>
+					<li><a href="#">User Profiles</a></li>
+					<li><a href="#">Company Profiles</a></li>
+					<li><a href="#">Language</a></li>
+				  </ul>
+				</li>
+				<li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Messages <b class="caret"></b></a>
+				  <ul class="dropdown-menu">
+					<li><a href="#"><i class="icon-file"></i> Shared Files</a></li>
+					<li><a href="#">Posts</a></li>
+				  </ul>
+				</li>
+				<li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-question-sign  icon-white"></i> Help<b class="caret"></b></a>
+				  <ul class="dropdown-menu">
+					<li><a href="#">Contact CenterStone</a></li>
+					<li><a href="#">Contact Under Armour</a></li>
+					<li><a href="#">FAQs</a></li>
+				  </ul>
+				</li>
+				<li><a title="Close this session"><i class="icon-eject icon-white"></i> Exit</a></li>
+				<li><a  href="#" title="Switch to Version 3 Interfaces"><i class="icon-refresh icon-white"></i> Switch</a></li>
+	
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+	<!-- Masthead
+================================================== -->
+  <div class="row" id="start" style="display:none;>
+    <div class="span4">
+        <div class="container" style="padding-left: 100px;">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+			 <div class="btn-toolbar" style="margin-bottom: 9px">
+				<div class="btn-group">
+				  <a class="btn btn-primary" href="#"><i class="icon-pencil icon-white"></i> Catalog Selection</a>
+				  <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+				  <ul class="dropdown-menu">
+					<li><a href="#"  onclick="runme(1)">Fall 2012</a></li>
+					<li><a href="#">Spring 2013</a></li>
+					<li><a href="#">Fall 2013</a></li>
+				  </ul>
+				</div>
+				<div class="btn-group">
+				  <a class="btn" href="#"><i class="icon-search"></i> Search</a>
+				  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+				  <ul class="dropdown-menu">
+					<li><a href="#">Browse</a></li>
+					<li><a href="#">Simple Search</a></li>
+					<li><a href="#">Advanced Search</a></li>
+					<li><a href="#">Text Box Entry</a></li>
+					<li><a href="#">Copy Previous Order</a></li>
+					<li><a href="#">Template</a></li>
+					<li><a href="#">Upload Order Form</a></li>
+				  </ul>
+				</div>
+				<div class="btn-group">
+				  <a class="btn" href="#" title="List View" onclick="showorderopt(1)"><i class="icon-list-alt"></i></a>
+				  <a class="btn btn-primary" href="#" title="Image View"  onclick="showorderopt(2)"><i class="icon-picture icon-white"></i></a>
+				  <a class="btn" href="#" title="Order Form View"  onclick="showorderopt(7)"><i class="icon-book"></i></a>
+				  <a class="btn" href="#" title="Color Survey" onclick="colorlooktog()"><i class="icon-eye-open"></i></a>
+				</div>
+
+				<div class="btn-group">
+				  <a class="btn" href="#" title="Inventory Legend"><i class="icon-list-alt"></i></a>
+				</div>
+	
+				<div class="btn-group">
+				  <a class="btn" href="#" title="Preview"><i class="icon-screenshot"></i></a>
+				  <a class="btn" href="#" title="Tranfer to Rep"><i class="icon-share"></i></a>
+				  <a class="btn" href="#" title="Copy"><i class="icon-plus-sign"></i></a>
+				  <a class="btn" href="#" title="Clear"><i class="icon-remove"></i></a>
+				</div>
+				<div class="btn-group">
+				  <a class="btn" href="#">Save</a>
+				</div>
+				<div class="btn-group">
+				  <a class="btn" href="#"><i class="icon-shopping-cart"></i> Continue</a>
+				</div>
+	        </div><!-- /.button toolbar -->
+		</div>
+	</div>
+  </div>	
+
+ 
+	<div class="row" id="step2" style="display:none;">
+    <div class="span4">
+        <div class="container" style="padding-left: 100px;">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+ <div class="btn-toolbar" style="margin-bottom: 9px">
+	 	<div class="btn-group">
+          <a class="btn btn-success" href="#"><i class="icon-edit icon-white"></i> Fall 2012</a>
+        </div>
+	 	<div class="btn-group">
+          <a class="btn" href="#"><i class="icon-search"></i> Search</a>
+          <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Browse</a></li>
+            <li><a href="#">Simple Search</a></li>
+            <li><a href="#">Advanced Search</a></li>
+            <li><a href="#">Text Box Entry</a></li>
+            <li><a href="#">Copy Previous Order</a></li>
+            <li><a href="#">Template</a></li>
+			<li><a href="#">Upload Order Form</a></li>
+          </ul>
+        </div>
+				<div class="btn-group">
+				  <a class="btn" href="#" title="List View" onclick="showorderopt(1)"><i class="icon-list-alt"></i></a>
+				  <a class="btn btn-primary" href="#" title="Image View"  onclick="showorderopt(2)"><i class="icon-picture icon-white"></i></a>
+				  <a class="btn" href="#" title="Order Form View"  onclick="showorderopt(7)"><i class="icon-book"></i></a>
+				  <a class="btn" href="#" title="Color Survey" onclick="colorlooktog()"><i class="icon-eye-open"></i></a>
+				</div>
+
+				<div class="btn-group">
+				  <a class="btn" href="#" title="Inventory Legend"><i class="icon-list-alt"></i></a>
+				</div>
+	
+				<div class="btn-group">
+				  <a class="btn" href="#" title="Preview"><i class="icon-screenshot"></i></a>
+				  <a class="btn" href="#" title="Tranfer to Rep"><i class="icon-share"></i></a>
+				  <a class="btn" href="#" title="Copy"><i class="icon-plus-sign"></i></a>
+				  <a class="btn" href="#" title="Clear"><i class="icon-remove"></i></a>
+				</div>
+				<div class="btn-group">
+				  <a class="btn" href="#">Save</a>
+				</div>
+				<div class="btn-group">
+				  <a class="btn" href="#"><i class="icon-shopping-cart"></i> Continue</a>
+				</div>
+
+	        </div><!-- /.button toolbar -->
+
+          </div><!--/.nav-collapse -->
+
+        </div>
+      </div>
+    </div>
+
+
+	<div class="row" id="step3" style="display:none;">
+    <div class="span4">
+        <div class="container" style="padding-left: 100px;">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+ <div class="btn-toolbar" style="margin-bottom: 9px">
+	 	<div class="btn-group">
+          <a class="btn btn-success" href="#"><i class="icon-edit icon-white"></i> Fall 2012</a>
+        </div>
+	 	<div class="btn-group">
+          <a class="btn btn-primary" href="#"><i class="icon-search  icon-white"></i> Search</a>
+          <a class="btn  btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#"  onclick="runme(3)">Browse</a></li>
+            <li><a href="#">Simple Search</a></li>
+            <li><a href="#">Advanced Search</a></li>
+            <li><a href="#">Text Box Entry</a></li>
+            <li><a href="#">Copy Previous Order</a></li>
+            <li><a href="#">Template</a></li>
+			<li><a href="#">Upload Order Form</a></li>
+          </ul>
+        </div>
+				<div class="btn-group">
+				  <a class="btn" href="#" title="List View" onclick="showorderopt(1)"><i class="icon-list-alt"></i></a>
+				  <a class="btn btn-primary" href="#" title="Image View"  onclick="showorderopt(2)"><i class="icon-picture icon-white"></i></a>
+				  <a class="btn" href="#" title="Order Form View"  onclick="showorderopt(7)"><i class="icon-book"></i></a>
+				  <a class="btn" href="#" title="Color Survey" onclick="colorlooktog()"><i class="icon-eye-open"></i></a>
+				</div>
+
+				<div class="btn-group">
+				  <a class="btn" href="#" title="Inventory Legend"><i class="icon-list-alt"></i></a>
+				</div>
+	
+				<div class="btn-group">
+				  <a class="btn" href="#" title="Preview"><i class="icon-screenshot"></i></a>
+				  <a class="btn" href="#" title="Tranfer to Rep"><i class="icon-share"></i></a>
+				  <a class="btn" href="#" title="Copy"><i class="icon-plus-sign"></i></a>
+				  <a class="btn" href="#" title="Clear"><i class="icon-remove"></i></a>
+				</div>
+				<div class="btn-group">
+				  <a class="btn" href="#">Save</a>
+				</div>
+				<div class="btn-group">
+				  <a class="btn" href="#"><i class="icon-shopping-cart"></i> Continue</a>
+				</div>
+
+	        </div><!-- /.button toolbar -->
+
+          </div><!--/.nav-collapse -->
+
+        </div>
+      </div>
+    </div>
+
+	<div class="row" id="step4" style="display:none;">
+    <div class="span4">
+        <div class="container" style="padding-left: 100px;">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+ <div class="btn-toolbar" style="margin-bottom: 9px">
+	 	<div class="btn-group">
+          <a class="btn btn-success" href="#"><i class="icon-edit icon-white"></i> Fall 2012</a>
+        </div>
+	 	<div class="btn-group">
+          <a class="btn btn-info" href="#"><i class="icon-edit icon-white"></i> Selected Search Tool: Simple Search</a>
+          <a class="btn  btn-info dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Browse</a></li>
+            <li><a href="#"onclick="runme(4)">Simple Search</a></li>
+            <li><a href="#">Advanced Search</a></li>
+            <li><a href="#">Text Box Entry</a></li>
+            <li><a href="#">Copy Previous Order</a></li>
+            <li><a href="#">Template</a></li>
+          </ul>
+        </div>
+				<div class="btn-group">
+				  <a class="btn" href="#" title="List View" onclick="showorderopt(1)"><i class="icon-list-alt"></i></a>
+				  <a class="btn btn-primary" href="#" title="Image View"  onclick="showorderopt(2)"><i class="icon-picture icon-white"></i></a>
+				  <a class="btn" href="#" title="Order Form View"  onclick="showorderopt(7)"><i class="icon-book"></i></a>
+				  <a class="btn" href="#" title="Color Survey" onclick="colorlooktog()"><i class="icon-eye-open"></i></a>
+				</div>
+
+				<div class="btn-group">
+				  <a class="btn" href="#" title="Inventory Legend"><i class="icon-list-alt"></i></a>
+				</div>
+	
+				<div class="btn-group">
+				  <a class="btn" href="#" title="Preview"><i class="icon-screenshot"></i></a>
+				  <a class="btn" href="#" title="Tranfer to Rep"><i class="icon-share"></i></a>
+				  <a class="btn" href="#" title="Copy"><i class="icon-plus-sign"></i></a>
+				  <a class="btn" href="#" title="Clear"><i class="icon-remove"></i></a>
+				</div>
+				<div class="btn-group">
+				  <a class="btn" href="#">Save</a>
+				</div>
+				<div class="btn-group">
+				  <a class="btn" href="#" id="goodorderbutton"><i class="icon-shopping-cart"></i> Continue</a>
+				</div>
+
+	        </div><!-- /.button toolbar -->
+
+          </div><!--/.nav-collapse -->
+
+        </div>
+      </div>
+    </div>
+
+	
+	<!-- shipment nav idea -->
+  <div class="row" id="shipmentwindowstart" style="padding-left: 100px; display: none;">
+    <div class="span4">
+		<ul class="nav nav-tabs">
+		  <li class="active">
+			<a href="#" class="active" onclick="runme(2)"><i class="icon-edit"></i> Select Shipment Date</a>
+		  </li>
+		  <li>
+			<a href="#"><i class="icon-plus"></i> Add Shipment</a>
+		  </li>
+		</ul>
+	</div>
+  </div>	
+
+	<!-- shipment nav idea -->
+  <div class="row" id="shipmentwindow" style="padding-left: 100px; display: none;">
+    <div class="span6">
+		<ul class="nav nav-tabs">
+		  <li class="active">
+			<a href="#" class="active"><i class="icon-edit"></i> July 1, 2012</a>
+		  </li>
+		  <li>
+			<a href="#"><i class="icon-edit"></i> August 1, 2012</a>
+		  </li>
+		  <li>
+			<a href="#"><i class="icon-plus"></i> Add Shipment</a>
+		  </li>
+		</ul>
+	</div>
+  </div>	
+
+
+	<div class="row" id="simple" style="display:none; position:absolute; left: 200px; top: 100px; z-index:3; ">
+    <div class="span4">
+      <div>
+		<form class="well form-search">
+		  <input type="text" class="input-medium search-query">
+		  <button type="submit" class="btn">Search</button>
+		</form>
+      </div> <!-- /well -->
+    </div>
+	</div>
+
+	<div class="row" id="browse" style="display:none; position:absolute; left: 200px; top: 100px; z-index:3; ">
+    <div class="span4">
+      <div class="well">
+        <ul class="nav nav-list">
+          <li class="active><a href="#"><i class="icon-home"></i> Fall 2012</a></li>
+          <li><a href="#" onclick="showorderopt('browseme')> Mens</a></li>
+        <ul class="nav nav-list">
+          <li><a href="#"> jacket</a></li>
+          <li"><a href="#"> pant</a></li>
+          <li><a href="#"> shoe</a></li>
+        </ul>
+          <li><a href="#"> Womens</a></li>
+          <li><a href="#"> Kids</a></li>
+        </ul>
+      </div> <!-- /well -->
+    </div>
+	</div>
+
+    <div class="container">
+	
+      <p id="directions" style="display:none;">Select a catalog.</p>
+
+	<p style="text-align: center; display:none;" id="catalogimage">
+	<img src="../../img/newcatalogimage.png">
+	</p>
+		
+   </div> <!-- /container -->
+
+   	<div class="container" id="lineitementry" style="position:absolute;
+													left:90px;
+													top:180px;
+													z-index:3; display:none;">
+    <div class="span4">
+      <div>
+		<form class="form-search">
+			<table class="table table-striped table-condensed">
+			  <thead>
+				<tr>
+				  <th>Item Number</th>
+				  <th>Product Name</th>
+				  <th>Color</th>
+				  <th>Size</th>
+				  <th>SKU</th>
+				  <th>Price</th>
+				  <th>Qty</th>
+				  <th>Line Total</th>
+				</tr>
+			  </thead>
+			  <tbody>
+				<tr>
+				  <td>AB-1234</td>
+				  <td>Jacket</td>
+				  <td>Red</td>
+				  <td>XS</td>
+				  <td>123123456XS</td>
+				  <td>$10.99</td>
+				  <td><input type="text" class="span1"></td>
+				  <td>Line Total Calculation</td>
+				</tr>
+				<tr>
+				  <td>AB-1234</td>
+				  <td>Jacket</td>
+				  <td>Red</td>
+				  <td>S</td>
+				  <td>123123456S</td>
+				  <td>$10.99</td>
+				  <td><input type="text" class="span1"></td>
+				  <td>Line Total Calculation</td>
+				</tr>
+				<tr>
+				  <td>AB-1234</td>
+				  <td>Jacket</td>
+				  <td>Red</td>
+				  <td>M</td>
+				  <td>123123456M</td>
+				  <td>$10.99</td>
+				  <td><input type="text" class="span1"></td>
+				  <td>Line Total Calculation</td>
+				</tr>
+				<tr>
+				  <td>AB-1234</td>
+				  <td>Jacket</td>
+				  <td>Red</td>
+				  <td>L</td>
+				  <td>123123456L</td>
+				  <td>$10.99</td>
+				  <td><input type="text" class="span1"></td>
+				  <td>Line Total Calculation</td>
+				</tr>
+				<tr>
+				  <td>AB-1234</td>
+				  <td>Jacket</td>
+				  <td>Red</td>
+				  <td>XL</td>
+				  <td>123123456XL</td>
+				  <td>$10.99</td>
+				  <td><input type="text" class="span1"></td>
+				  <td>Line Total Calculation</td>
+				</tr>
+				<tr>
+				  <td>AB-1234</td>
+				  <td>Jacket</td>
+				  <td>Green</td>
+				  <td>XS</td>
+				  <td>123123456XS</td>
+				  <td>$10.99</td>
+				  <td><input type="text" class="span1"></td>
+				  <td>Line Total Calculation</td>
+				</tr>
+				<tr>
+				  <td>AB-1234</td>
+				  <td>Jacket</td>
+				  <td>Green</td>
+				  <td>S</td>
+  				  <td>123123456XS</td>
+				  <td>$10.99</td>
+				  <td><input type="text" class="span1"></td>
+				  <td>Line Total Calculation</td>
+				</tr>
+				<tr>
+				  <td>AB-1234</td>
+				  <td>Jacket</td>
+				  <td>Green</td>
+				  <td>M</td>
+				  <td>123123456XS</td>
+				  <td>$10.99</td>
+				  <td><input type="text" class="span1"></td>
+				  <td>Line Total Calculation</td>
+				</tr>
+				<tr>
+				  <td>AB-1234</td>
+				  <td>Jacket</td>
+				  <td>Green</td>
+				  <td>L</td>
+				  <td>123123456XS</td>
+				  <td>$10.99</td>
+				  <td><input type="text" class="span1"></td>
+				  <td>Line Total Calculation</td>
+				</tr>
+				<tr>
+				  <td>AB-1234</td>
+				  <td>Jacket</td>
+				  <td>Green</td>
+				  <td>XL</td>
+				  <td>123123456XS</td>
+				  <td>$10.99</td>
+				  <td><input type="text" class="span1"></td>
+				  <td>Line Total Calculation</td>
+				</tr>
+				<tr>
+				  <th colspan="5">Totals</th>
+				  <td>Sum of Qty Entered</td>
+				  <td>Sum of Line Totals</td>
+				</tr>
+			  </tbody>
+			</table>
+
+		</form>
+      </div>
+    </div>
+	</div>
+
+
+   	<div class="container well" id="ordergridonly" style=" position:absolute;
+													left:160px;
+													top:180px;
+													z-index: 5; display:none; ">
+    <div class="span4">
+      <div>
+		<form class="form-search">
+		<table class="table table-striped table-condensed">
+			  <thead>
+				<tr>
+				  <th>Color/Size</th>
+				  <th>XS</th>
+				  <th>S</th>
+				  <th>M</th>
+				  <th>L</th>
+				  <th>XL</th>
+				  <th>Line Total</th>
+				</tr>
+			  </thead>
+			  <tbody>
+				<tr>
+				  <td>Red</td><td><input type="text" class="span1"></td><td><input type="text" class="span1"></td><td><input type="text" class="span1"></td><td><input type="text" class="span1"></td><td><input type="text" class="span1"></td><td>Line Total</td>
+				</tr>
+				<tr>
+				  <td>Blue</td><td><input type="text" class="span1"></td><td><input type="text" class="span1"></td><td><input type="text" class="span1"></td><td><input type="text" class="span1"></td><td><input type="text" class="span1"></td><td>Line Total</td>
+				</tr>
+				<tr>
+				  <td>Black</td><td><input type="text" class="span1"></td><td><input type="text" class="span1"></td><td><input type="text" class="span1"></td><td><input type="text" class="span1"></td><td><input type="text" class="span1"></td><td>Line Total</td>
+				</tr>
+				<tr>
+				  <th>Size Total</th><th>Column Total</th><th>Column Total</th><th>Column Total</th><th>Column Total</th><th>Column Total</th><th>Product Total</th>
+				</tr>
+			  </tbody>
+			</table>
+			<input class="btn btn-primary" type="button" value="Add to Order" onclick="showorderopt(6)">
+		</form>
+      </div>
+    </div>
+	</div>
+
+   	<div class="container" id="imagebasedsearching"  style="position:absolute;
+													left:90px;
+													top:180px;
+													z-index: 3; display:none; ">
+		<div class="span12">
+			<ul class="thumbnails">
+			  <li class="span2">
+				<a href="#" class="thumbnail"  onclick="showorderopt(4)">
+				  <img src="pics/A52XVG1_F12.jpg" alt="">
+				 </a>
+				  <h5>A52XVG</h5>
+				  <p>Jacket 1 </p>
+				  <p id="orderedcount" style="display:none;">Ordered 10</p>
+				</li>
+			  <li class="span2">
+				<a href="#" class="thumbnail" >  <img src="pics/A54Q0C5_F12.jpg" alt=""></a>
+				  <h5>A54Q0C5</h5>
+				  <p>Jacket 2</p>
+				</li>
+			  <li class="span2">
+				 <a href="#" class="thumbnail"> <img src="pics/F10_AMKE736.jpg" alt=""></a>
+				  <h5>AMKE736</h5>
+				  <p>Jacket 3</p>
+				</li>
+			  <li class="span2">
+				 <a href="#" class="thumbnail"> <img src="pics/ARPF2V5_MCLASSVCARGOSHORT_S11.jpg" alt=""></a>
+				  <h5>ARPF2V5</h5>
+				  <p>Cargo Short</p>
+				</li>
+			  <li class="span2">
+				 <a href="#" class="thumbnail"> <img src="pics/F10_AMK6T58.jpg" alt=""></a>
+				  <h5>AMK6T58</h5>
+				  <p>beany</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+   	<div class="container" id="singleproductselect"  style="background-color: white; position:absolute;
+													left:110px;
+													top:210px;
+													z-index: 4; display:none; ">
+		<div class="span3">
+			<ul class="thumbnails">
+			  <li class="span3">
+				<a href="#" class="thumbnail" onclick="showorderopt(5)">
+				  <img src="pics/A52XVG1_F12.jpg" alt="">
+				 </a>
+				  <h5>A52XVG</h5>
+				  <p>Jacket 1</p>
+
+				</li>
+			  <li class="span1">
+				<a href="#" class="thumbnail">
+				  <img src="pics/A52XVG1_F12.jpg" alt="">
+				 </a>
+				  <h5>A52XVG</h5>
+				  <p>Red</p>
+				</li>
+			  <li class="span1">
+				<a href="#" class="thumbnail">
+				  <img src="pics/A52YVB5_F12.jpg" alt="">
+				 </a>
+				  <h5>A52XVG</h5>
+				  <p>Blue</p>
+				</li>
+			  <li class="span1">
+				<a href="#" class="thumbnail">
+				  <img src="pics/A52YJK3_F12.jpg" alt="">
+				 </a>
+				  <h5>A52XVG</h5>
+				  <p>Black</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+   	<div class="container" id="workbookview" style="position:absolute;
+													left:110px;
+													top:180px;
+													z-index: 3; display: none;">
+		<div class="span16">
+			<ul class="thumbnails">
+			  <li class="span1">
+				  <form class="form-search">
+					<table class="table table-striped table-condensed">
+						  <thead>
+							<tr>
+							  <th>Product</th>
+							  <th>Color/Size</th>
+							  <th>XS</th>
+							  <th>S</th>
+							  <th>M</th>
+							  <th>L</th>
+							  <th>XL</th>
+							  <th>Line Total</th>
+							</tr>
+						  </thead>
+						  <tbody>
+							<tr>
+							   <td rowspan="4">
+								<a href="#" class="thumbnail">
+								  <img src="pics/A52XVG1_F12.jpg" alt="">
+								 </a>
+								  <h5>A52XVG</h5>
+								  <p>Red</p>
+								  <p><i class="icon-info-sign"></i></p>
+							   </td>
+							   <td>Red</td><td><input type="text" class="span1"></td><td><input type="text" class="span1"></td><td><input type="text" class="span1"></td><td><input type="text" class="span1"></td><td><input type="text" class="span1"></td><td>Line Total</td>
+							</tr>
+							<tr>
+							  <td>Blue</td><td><input type="text" class="span1"></td><td><input type="text" class="span1"></td><td><input type="text" class="span1"></td><td><input type="text" class="span1"></td><td><input type="text" class="span1"></td><td>Line Total</td>
+							</tr>
+							<tr>
+							  <td>Black</td><td><input type="text" class="span1"></td><td><input type="text" class="span1"></td><td><input type="text" class="span1"></td><td><input type="text" class="span1"></td><td><input type="text" class="span1"></td><td>Line Total</td>
+							</tr>
+							<tr>
+							  <th>Size Total</th><th>Column Total</th><th>Column Total</th><th>Column Total</th><th>Column Total</th><th>Column Total</th><th>Product Total</th>
+							</tr>
+						  </tbody>
+						</table>
+					</form>
+				</li>
+				</ul>
+		</div>
+	</div>
+
+
+	<div class="row well" id="colorlook" style="position:absolute; background-color: white; left:140px; top:150px; z-index:8; display:none; ">
+		Color Survey
+		<ul class="nav nav-tabs">
+				  <li class="active">
+					<a href="#" class="active">July 1, 2012 Shipment</a>
+				  </li>
+				  <li>
+					<a href="#">August 1, 2012 Shipment</a>
+				  </li>
+				  <li>
+					<a href="#">All Ordered Products</a>
+				  </li>
+				</ul>
+
+	<div class="span12">
+				<div class="btn-group">
+				  <a class="btn" href="#"> Group by</a>
+				  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+				  <ul class="dropdown-menu">
+					<li class="active"><a href="#">Product</a></li>
+					<li><a href="#">Color</a></li>
+				  </ul>
+				</div>
+				<div class="btn-group">
+				  <a class="btn" href="#"> Image Size</a>
+				  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+				  <ul class="dropdown-menu">
+					<li class="active"><a href="#">Small</a></li>
+					<li><a href="#">Medium</a></li>
+					<li><a href="#">Large</a></li>
+				  </ul>
+				</div>
+
+					<div class="span6">
+					  <div class="span3 well">
+						<ul class="thumbnails">
+							<li class="span1" title="Ordered: 8">
+						  <img src="pics/A52XVG1_F12.jpg" alt="">
+							</li>
+							<li class="span1" title="Ordered: 8">
+						  <img src="pics/A52YJK3_F12.jpg" alt="">
+							</li>
+							<li class="span1" title="Ordered: 8">
+						  <img src="pics/A52YVB5_F12.jpg" alt="">
+							</li>
+						</ul>
+						</div>
+					  <div class="span3 well">
+						<ul class="thumbnails">
+							<li class="span1" title="Ordered: 8">
+						  <img src="pics/A54Q0C5_F12.jpg" alt="">
+							</li>
+							<li class="span1" title="Ordered: 8">
+						  <img src="pics/A54Q682_F12.jpg" alt="">
+							</li>
+							<li class="span1" title="Ordered: 8">
+						  <img src="pics/A54QVA6_F12.jpg" alt="">
+							</li>
+						</ul>
+					</div>
+					</div>
+
+			<div class="span6">
+			<div class="span3 well">
+				<ul class="thumbnails">
+					<li class="span1" title="Ordered: 8">
+				  <img src="pics/F10_AMK6T58.jpg" alt="">
+					</li>
+					<li class="span1" title="Ordered: 8">
+				  <img src="pics/F10_AMK60L0.jpg" alt="">
+					</li>
+					<li class="span1" title="Ordered: 8">
+				  <img src="pics/F10_AMK69L3.jpg" alt="">
+					</li>
+				</ul>
+				</div>
+			  <div class="span3 well">
+				<ul class="thumbnails">
+					<li class="span1" title="Ordered: 8">
+				  <img src="pics/F10_AMKE736.jpg" alt="">
+					</li>
+					<li class="span1" title="Ordered: 8">
+				  <img src="pics/F10_AMKJ001.jpg" alt="">
+					</li>
+					<li class="span1" title="Ordered: 8">
+				  <img src="pics/F10_AMKJ682.jpg" alt="">
+					</li>
+				</ul>
+			  </div>
+			</div>
+
+		</div> <!-- span 12 close -->
+	</div>
+
+	
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+
+  </body>
+</html>

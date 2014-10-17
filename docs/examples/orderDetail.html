@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>iVendix - Order List</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+	<link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+
+	  .producthangindent {
+	   padding-left: 18px; 
+	   text-indent: -18px;
+	  }
+	  
+	  .styleinfo{
+		float: right;
+		vertical-align: text-top;
+	  }
+	  .aligncenter{
+		text-align: center;
+	  }
+    </style>
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  </head>
+
+<!--- script includes are at bottom --->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+	<script src="../../js/jquery-ui-1.8.13.custom.min.js"></script>
+	<link href="../../jquery_ui_themes.1.8.13/ui-lightness/jquery-ui-1.8.13.custom.css">
+	<script src="../../js/divController.js"></script>
+
+
+  <script language="javascript">
+  	var divC=new $.divController();
+	
+
+	$(document).ready(function()
+		{
+			//$("#searchdiv").draggable();
+		}
+	);
+
+
+function toggleOrderTypes()
+{
+	$("#openOrders").toggle();
+	$("#closedOrders").toggle();
+}
+
+	
+  </script>
+  
+  <body>
+
+     <div class="navbar navbar-fixed-top visible-desktop">
+      <div class="navbar-inner">
+        <div class="container offset2 hidden-tablet">
+			<div class="nav-collapse">
+			  <ul class="nav">
+				<li><a href="#"><i class="icon-home"></i> Home</a></li>
+				<li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Orders <b class="caret"></b></a>
+				  <ul class="dropdown-menu">
+					<li><a href="newivendixrev5I_initial.html"><i class="icon-star-empty"></i> Create an Order</a></li>
+					<li><a href="newivendixrev5_Template.html">Create Order from a Template</a></li>
+					<li><a href="newivendixrev5_SSOF.html">iVendix Order Form</a></li>
+					<li class="divider"></li>
+					<li><a href="#" onclick="showList()"><i class="icon-inbox "></i> Order Dashboard</a></li>
+					<li><a href="#"><i class="icon-search"></i> Order Search</a></li>
+					<li class="divider"></li>
+					<li><a href="#">Work In Progress</a></li>
+					<li><a href="#"><i class="icon-ok"></i> Check Inventory</a></li>
+				  </ul>
+				</li>
+				<li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-cog"></i> Admin <b class="caret"></b></a>
+				  <ul class="dropdown-menu">
+					<li><a href="#"><i class="icon-user"></i> My Profile</a></li>
+					<li><a href="#">User Profiles</a></li>
+					<li><a href="#">Company Profiles</a></li>
+					<li><a href="#">Language</a></li>
+				  </ul>
+				</li>
+				<li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Messages <b class="caret"></b></a>
+				  <ul class="dropdown-menu">
+					<li><a href="#"><i class="icon-file"></i> Shared Files</a></li>
+					<li><a href="#">Posts</a></li>
+				  </ul>
+				</li>
+				<li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Product Administration<b class="caret"></b></a>
+				  <ul class="dropdown-menu">
+					<li><a href="#">Catalogs, etc.</a></li>
+				  </ul>
+				</li>
+				<li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-question-sign "></i> Help<b class="caret"></b></a>
+				  <ul class="dropdown-menu">
+					<li><a href="#">Contact CenterStone</a></li>
+					<li><a href="#">Contact Client</a></li>
+					<li><a href="#">FAQs</a></li>
+				  </ul>
+				</li>
+				<li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-question-sign "></i> Demo Links<b class="caret"></b></a>
+				  <ul class="dropdown-menu">
+					<li><a href="newivendixrev5_sizeruns.html">Size Runs</a></li>
+					</ul>
+				</li>
+				<li><a title="Close this session"><i class="icon-eject"></i> Exit</a></li>
+			</ul>
+			</div><!--/.nav-collapse -->
+			</div>
+		</div>
+		<div class="subnav offset2">
+			<ul class="nav">
+				<li><a title="Create an Order" href="newivendixrev5I_initial.html"><i class="icon-star-empty"></i> Create an Order</a></li>
+				<li><a title="Order Status and Information" onclick="showList()"><i class="icon-inbox "></i> Order Dashboard</a></li>
+				<li><a title="Check Inventory"><i class="icon-ok"></i> Check Inventory</a></li>
+			</ul>
+		</div>
+
+	</div>
+
+	
+	
+	<div class="container-fluid" style="padding-top: 60px;">
+
+	<h3>#application name# Order Number 1234</h3>
+	<div class="row-fluid">
+		<div class="span2 well">
+			<div>
+				<img src="../../img/iVendix.png" style="height: 110px;">
+			</div>
+			<h5>Demonstration Supplier</h5>
+							<p>1675 Larimer, Suite 550</br>
+							Denver, CO 80023</br>
+							(303) 763-7325<br>
+							(303) 763-7326 Fax<br>
+							www.centerstonetech.com
+							</p>
+
+		</div>
+		<div class="span2 well">
+					<h5>Fred's Skis</h5>
+					<p>1675 Desting, Suite 550</br>
+					Loggins, CO 80023</br>
+					(303) 763-7325</br>
+					(303) 763-7326 Fax
+					</p>
+					<span class="label">Account Number</span>
+					<p>123234345456567</p>
+					<span class="label">Billing</span>
+					<p>1675 Desting, Suite 550</br>
+					Loggins, CO 80023</br>
+					(303) 763-7325
+					(303) 763-7326 Fax
+					</p>
+					<span class="label">Shipping</span>
+					<p>1675 Desting, Suite 550</br>
+					Loggins, CO 80023</br>
+					(303) 763-7325</br>
+					(303) 763-7326 Fax
+					</p>
+					<span class="label">Store</span>
+					<p>Denver DC</br>
+					1675 Desting, Suite 550</br>
+					Loggins, CO 80023</br>
+					(303) 763-7325</br>
+					(303) 763-7326 Fax
+					</p>	
+					<span class="label">Buyer</span>
+					<p>Sally Ann Fletcher</br>
+					(303) 763-7326<br>
+					sallyann@fletch.com
+					</p>	
+
+		</div>
+		<div class="span4">
+			<h4>Order Information</h4>
+			<table class="table table-striped table-bordered">
+				<tbody>
+					<tr>
+						<td>Catalog</td>
+						<td>Spring 2012</td>
+					</tr>
+					<tr>
+						<td>#supplier# Order Number</td>
+						<td>AB123</td>
+					</tr>
+					<tr>
+						<td>Retailers PO</td>
+						<td>Fred's Order</td>
+					</tr>
+					<tr>
+						<td>Requested Ship Date</td>
+						<td>Aug 31, 2012</td>
+					</tr>
+					<tr>
+						<td>Cancel Date</td>
+						<td>Sep 10, 2012</td>
+					</tr>
+					<tr>
+						<td>Total Units</td>
+						<td>90</td>
+					</tr>
+					<tr>
+						<td>Order Total</td>
+						<td>$1,000</td>
+					</tr>
+					<tr>
+						<td>Order Terms</td>
+						<td>Net 30</td>
+					</tr>
+					<tr>
+						<td>Requested Shipment Method</td>
+						<td>Fed Ex 2nd Day</td>
+					</tr>
+					<tr>
+						<td>Comments</td>
+						<td>Per our discussion on the phone.</td>
+					</tr>
+				</tbody>
+			</table>	
+
+		</div>
+		
+		<div class="span4">
+			<h4>Transaction History</h4>
+			<table class="table table-striped table-bordered">
+				<thead>
+					<tr>
+						<th>Action</th>
+						<th>Date</th>
+						<th>Resource</th>
+						<th>Document</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Created</td>
+						<td>Jul 1, 2012 14:46</td>
+						<td colspan="2">John Q Rep</td>
+					</tr>
+					<tr>
+						<td>Transmitted</td>
+						<td>Jul 1, 2012 14:52</td>
+						<td colspan="2">System</td>
+					</tr>
+					<tr>
+						<td>Acknowledgement Received</td>
+						<td>Jul 2, 2012 01:46</td>
+						<td>System</td>
+						<td>
+					</tr>
+					<tr>
+						<td>Shipping Document Received</td>
+						<td>Aug 12, 2012 14:46</td>
+						<td>System</td>
+					</tr>
+				</tbody>
+			</table>
+		
+		</div>		
+	</div>
+	
+	<div class="btn btn-primary">Return to Order List</div>	
+	</div>
+
+	
+  </body>
+</html>
+

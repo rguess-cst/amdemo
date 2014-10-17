@@ -1,0 +1,3182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>iVendix - Multi Path</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+	<link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../assets/css/glyphicons.css" rel="stylesheet">
+
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+  </head>
+
+
+
+<!--- script includes are at bottom --->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+	<script src="../../js/jquery-ui-1.8.13.custom.min.js"></script>
+	<link href="../../jquery_ui_themes.1.8.13/ui-lightness/jquery-ui-1.8.13.custom.css">
+	<script src="../../js/divController.js"></script>
+
+
+  <script language="javascript">
+
+	$(document).ready(function()
+	{
+	$(".searches").hide();
+	$(".instory").hide();
+	$(".colorstory").hide();
+	$(".2nd").hide();
+
+		return;
+	}
+	);
+
+function showdata()
+{
+	$(".searches").show();
+	$(".dafields").hide();		
+}
+
+function instory()
+{
+	$(".instory").show();
+		
+}
+
+  </script>
+
+ 
+  <body>
+		
+<div class="row-fluid" id="ContentDIV">
+		
+
+
+
+<div id="confirmationwrapper"></div>
+
+<div class="container-fluid" id="ColorStoryPages_View">
+	<div class="row-fluid">
+		<div class="span4">
+			<h4>Color Stories</h4>
+		</div>
+		<div class="span8">
+			Color stories can be used as filters when searching for products and creating views for iV Guide enabled clients.
+		</div>
+	</div>
+	<div class="row-fluid">
+		<div class="span12">
+			<p>Search for colors in the left column and add them to the color story in the column to the right.</p>
+			<p>To remove a color from the color story, click on the <i class="icon-trash"></i></p>
+			<p>Save your changes by clicking the Save button.</p>
+		</div>
+	</div>
+
+<div class="row-fluid">	
+	<div class="row">
+		<div class="span10 offset1" id="ColorStoryLister" style="display: none;">	 
+<table class="table table-hover table-condensed">
+<tbody><tr>
+	<th>Color Story Name</th>	
+	<th>Catalog</th>	
+	<th>Created By</th>
+	<th>Edit Date</th>	
+	<th>Action</th>
+</tr>
+
+			
+			<tr>			
+			<td><a data-fn="colorStoryEdit" data-id="1" data-mode="Edit" href="#">blues</a></td>			
+			<td>Any</td>
+			<td>Supplier Admin</td>
+			<td>Mar 10, 2014</td>		
+			<td><a href="#"><i data-fn="copyColorStory" data-id="1" class="icon-repeat"></i></a>&nbsp;
+			    <a href="#"><i data-fn="confirmDelColorStory" data-id="1" class="icon-trash"></i></a>
+			</td>				
+			</tr>
+	
+<tr><td colspan="5"><input class="btn" type="button" value="New Color Story" data-fn="newColorStory"></td></tr><tr>	
+</tr></tbody></table>
+</div>
+	</div>	
+</div>
+
+<div class="row-fluid" id="ColorStoryEditor" style="">	
+
+
+<table>
+<tbody><tr>
+	<td valign="top"> 
+		<table class="table">
+		<tbody><tr><td>			
+			<table id="SearchArea" class="table table table-hover">			
+			<tbody><tr>
+				<td>This color story is for&nbsp;<span id="CatPickerDiv">	 
+<select id="Catalog_ID" data-fn="changeCatalog">
+<option value="0">All Catalogs</option>
+
+<option data-active="1" value="22">Pre-season 2012</option>
+
+<option data-active="1" value="4">Preseason 2013</option>
+
+<option data-active="1" value="3">Reorder</option>
+
+</select>
+</span></td>
+			</tr>			
+			<tr>
+				<th>Search for Colors</th>
+			</tr>
+			
+			<tr>
+				<td><input type="text" id="Color" placeholder="Color" value="" class="input-large srcField"></td>
+			</tr>
+			<tr>
+				<td><div class="btn-group" name="AndSearch" data-toggle="buttons-radio">
+					<button data-fn="setAndSearch" type="button" class="btn" value="1"><i class="icon-th"></i> AND</button>
+					<button data-fn="setAndSearch" type="button" class="btn active" value="0"><i class="icon-list"></i>OR</button>
+					</div>
+				</td>
+			</tr>
+			<tr>	
+				<td><input type="text" id="ColorCode" placeholder="Color Code" value="" class="input-large srcField"></td>
+			</tr>
+			<tr>	
+				<td><input class="btn" type="button" value="Search" data-fn="searchColors"></td>
+			</tr>			
+			</tbody></table>
+		</td>	
+		</tr>
+		</tbody></table>
+	</td>
+	<td>
+		<table class="table">
+		<tbody><tr>	
+			<td colspan="2">
+				<table>
+				<tbody><tr>
+					<th>Color Story</th>
+					<td>
+						<input placeholder="Color Story" type="text" id="ColorStoryName" value="" maxlength="60" class="input-large" data-required="1" data-fn="hasChanged">
+					</td>						
+					<td><input class="btn btn-warning" type="button" value="Save" id="savePagesBtn" data-fn="fn_Save">							
+						<input class="btn" type="button" value="Back to List" id="backToList" data-fn="backToList">
+					</td>	
+				</tr>	
+				
+				</tbody></table><div style="visibility: hidden;" class="AC" id="pageAlerts"></div><table>		
+				 
+			
+			
+		       
+		
+		<tbody><tr>
+			<th>Found Colors</th>
+			<th>Colors in Color Story</th>
+		</tr>
+		
+		<tr>	
+			<td valign="top">
+				<div style="overflow:auto; height:600px; min-width:300px;">
+					<table class="table table-hover table-striped" id="SearchedColors">
+					<tbody id="sortable2">	
+
+<tr>
+	<th>Color</th>		
+	<th>Color Code</th>	
+	<th class="selCC">Common Color</th>
+	<th class="dspCC">Common Color</th>	
+	<th>Add to Color Story</th>
+</tr>	
+
+	
+
+	<tr data-id="6500">
+		<td>Bintou Red&nbsp;</td>
+		<td>BRD&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6500" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6500 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="4919">
+		<td>black/red&nbsp;</td>
+		<td>&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4919" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_4919 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6963">
+		<td>Black/Red&nbsp;</td>
+		<td>017&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6963" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6963 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6169">
+		<td>Black/Red&nbsp;</td>
+		<td>BLK/RD&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6169" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6169 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6601">
+		<td>Black/White/Red&nbsp;</td>
+		<td>599&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6601" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6601 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6545">
+		<td>Blk/Fieryred/Bhrcl&nbsp;</td>
+		<td>093&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6545" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6545 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="4838">
+		<td>Blk/Gry/Red&nbsp;</td>
+		<td>&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4838" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_4838 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6205">
+		<td>BLK/RED&nbsp;</td>
+		<td>001&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6205" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6205 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6206">
+		<td>BLK/RED&nbsp;</td>
+		<td>019&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6206" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6206 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="4839">
+		<td>Blk/Red/Blk&nbsp;</td>
+		<td>&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4839" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_4839 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="4840">
+		<td>Blk/Red/Gry&nbsp;</td>
+		<td>&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4840" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_4840 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="4844">
+		<td>Blk/Wht/Red&nbsp;</td>
+		<td>&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4844" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_4844 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6209">
+		<td>BLK/WHT/RED&nbsp;</td>
+		<td>001&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6209" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6209 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6609">
+		<td>Blufde/Fieryred/S&nbsp;</td>
+		<td>463&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6609" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6609 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6546">
+		<td>Brint Blue/Fiery Red&nbsp;</td>
+		<td>405&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6546" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6546 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6562">
+		<td>Charcoal/Fiery Red&nbsp;</td>
+		<td>062&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6562" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6562 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6489">
+		<td>Cherry Red&nbsp;</td>
+		<td>HD&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6489" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6489 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="5026">
+		<td>Choc/White/Red&nbsp;</td>
+		<td>&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="5026" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_5026 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6741">
+		<td>Chrcl/Gllgry/Fieryred&nbsp;</td>
+		<td>072&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6741" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6741 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="4486">
+		<td>Cranberry Red&nbsp;</td>
+		<td>26&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4486" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_4486 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6705">
+		<td>Crystal Red/Positive Red Iridium&nbsp;</td>
+		<td>749&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6705" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6705 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6438">
+		<td>Dark Red&nbsp;</td>
+		<td>DKR&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6438" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6438 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6219">
+		<td>DKS/RED&nbsp;</td>
+		<td>025&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6219" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6219 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="7120">
+		<td>Drip Red&nbsp;</td>
+		<td>DPR&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="7120" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_7120 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6553">
+		<td>Fiery Red&nbsp;</td>
+		<td>485&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6553" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6553 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6628">
+		<td>Fieryred/Optcyllw/Blk&nbsp;</td>
+		<td>646&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6628" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6628 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="7099">
+		<td>Flame Red&nbsp;</td>
+		<td>122&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="7099" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_7099 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6610">
+		<td>Going Native Paintbrush Red&nbsp;</td>
+		<td>291&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6610" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6610 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="4857">
+		<td>Gry/Blk/Red&nbsp;</td>
+		<td>&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4857" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_4857 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6917">
+		<td>Jazzy Red&nbsp;</td>
+		<td>JZR&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6917" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6917 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6701">
+		<td>Navy/Red/White&nbsp;</td>
+		<td>465&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6701" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6701 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6624">
+		<td>Paintbrush Red&nbsp;</td>
+		<td>065&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6624" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6624 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6652">
+		<td>Raja Paintbrush Red&nbsp;</td>
+		<td>134&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6652" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6652 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="4455">
+		<td>Real Red&nbsp;</td>
+		<td>674&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4455" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_4455 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="4720">
+		<td>Red&nbsp;</td>
+		<td>&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4720" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_4720 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6996">
+		<td>Red&nbsp;</td>
+		<td>003&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6996" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6996 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="5112">
+		<td>Red&nbsp;</td>
+		<td>01&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="5112" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_5112 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6599">
+		<td>RED&nbsp;</td>
+		<td>162&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6599" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6599 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6577">
+		<td>RED&nbsp;</td>
+		<td>163&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6577" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6577 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="4612">
+		<td>Red&nbsp;</td>
+		<td>3834&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4612" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_4612 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="4456">
+		<td>Red&nbsp;</td>
+		<td>410&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4456" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_4456 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6480">
+		<td>Red&nbsp;</td>
+		<td>42&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6480" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6480 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6810">
+		<td>Red&nbsp;</td>
+		<td>49598&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6810" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6810 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="4653">
+		<td>Red&nbsp;</td>
+		<td>6&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4653" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_4653 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="4457">
+		<td>Red&nbsp;</td>
+		<td>600&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4457" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_4457 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="7200">
+		<td>Red&nbsp;</td>
+		<td>61704&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="7200" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_7200 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="4458">
+		<td>Red&nbsp;</td>
+		<td>674&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4458" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_4458 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="4904">
+		<td>Red&nbsp;</td>
+		<td>RD&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4904" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_4904 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6847">
+		<td>Red&nbsp;</td>
+		<td>RD65&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6847" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6847 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6170">
+		<td>Red&nbsp;</td>
+		<td>Red&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6170" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6170 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6753">
+		<td>RED GRAPE&nbsp;</td>
+		<td>142&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6753" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6753 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6654">
+		<td>Red Line&nbsp;</td>
+		<td>465&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6654" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6654 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="4721">
+		<td>Red Metal&nbsp;</td>
+		<td>&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4721" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_4721 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6666">
+		<td>Red Orange&nbsp;</td>
+		<td>71H&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6666" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6666 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="4722">
+		<td>Red-CMT&nbsp;</td>
+		<td>&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4722" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_4722 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="4953">
+		<td>red/black&nbsp;</td>
+		<td>&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4953" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_4953 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="7097">
+		<td>Red/Black&nbsp;</td>
+		<td>03&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="7097" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_7097 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6920">
+		<td>Red/Black&nbsp;</td>
+		<td>055&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6920" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6920 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="7052">
+		<td>Red/Black&nbsp;</td>
+		<td>RB&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="7052" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_7052 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="4459">
+		<td>Red/BLK&nbsp;</td>
+		<td>234&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4459" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_4459 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="4460">
+		<td>Red/BLK&nbsp;</td>
+		<td>565&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4460" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_4460 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6232">
+		<td>RED/BLK&nbsp;</td>
+		<td>600&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6232" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6232 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="4985">
+		<td>Red/Blk/Wht&nbsp;</td>
+		<td>&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4985" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_4985 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6233">
+		<td>RED/BLK/WHT&nbsp;</td>
+		<td>600&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6233" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6233 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="5032">
+		<td>Red/Grey&nbsp;</td>
+		<td>&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="5032" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_5032 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="4986">
+		<td>Red/White&nbsp;</td>
+		<td>&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4986" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_4986 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="7068">
+		<td>Red/White&nbsp;</td>
+		<td>054&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="7068" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_7068 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6688">
+		<td>Red/White&nbsp;</td>
+		<td>602&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6688" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6688 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6756">
+		<td>Red/White/Gum&nbsp;</td>
+		<td>650&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6756" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6756 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6234">
+		<td>RED/WHT/BLK&nbsp;</td>
+		<td>600&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6234" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6234 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="4461">
+		<td>Redline&nbsp;</td>
+		<td>020&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4461" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_4461 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="4494">
+		<td>Ruby Red&nbsp;</td>
+		<td>52&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4494" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_4494 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="4790">
+		<td>Sailor's Red&nbsp;</td>
+		<td>&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4790" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_4790 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="4791">
+		<td>Sailor's Red-2C&nbsp;</td>
+		<td>&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4791" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_4791 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6634">
+		<td>Teensy Stripe Paintbrush Red&nbsp;</td>
+		<td>393&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6634" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6634 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="7160">
+		<td>TNF Black/TNF Red&nbsp;</td>
+		<td>KX9&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="7160" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_7160 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="7027">
+		<td>TNF Red/TNF Black&nbsp;</td>
+		<td>KZ3&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="7027" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_7027 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="4663">
+		<td>Varsity Red&nbsp;</td>
+		<td>3&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4663" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_4663 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6708">
+		<td>White/Fiery Red&nbsp;</td>
+		<td>192&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6708" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6708 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6563">
+		<td>Wht/Blk/FieryRed&nbsp;</td>
+		<td>137&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6563" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6563 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6687">
+		<td>Wht/Nvy/Red&nbsp;</td>
+		<td>130&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6687" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6687 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+	<tr data-id="6255">
+		<td>WHT/RED&nbsp;</td>
+		<td>100&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="6255" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_6255 dspCC">&nbsp;</td>		
+		<td>
+			<span class="icon-chevron-right addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+
+</tbody>
+					</table>
+				</div>
+			</td>
+			
+			<td valign="top">
+				<div style="overflow:auto; height:600px; min-width:300px;">
+					<table class="table table-hover table-striped" id="SelectedColors">										
+					<tbody id="sortable1"><tr data-id="4656">
+		<td>"RED,BLK,WHT"&nbsp;</td>
+		<td>20&nbsp;</td>		
+		<td class="selCC">	 
+<select data-id="4656" data-fn="setCommonColor">
+<option value="0"></option>
+
+<option value="9">Black</option>
+
+<option value="5">Blue</option>
+
+<option value="4">Green</option>
+
+<option value="2">Orange</option>
+
+<option value="7">Pink</option>
+
+<option value="6">Purple</option>
+
+<option value="1">Red</option>
+
+<option value="8">White</option>
+
+<option value="3">Yellow</option>
+
+</select>
+&nbsp;</td>
+		<td class="clrCC_4656 dspCC">&nbsp;</td>		
+		<td>
+			<span class="addTo icon-trash" data-fn="moveItem"></span>&nbsp;
+			<span class="icon-trash delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr></tbody>
+					</table>
+				</div>
+			</td>
+		</tr>
+		</tbody></table>
+	</td>
+</tr>
+</tbody></table>
+  
+
+
+
+
+<script type="text/template" id="template-colorRows">	
+<% var iconTr=model.iconTr,
+       iconRgt=model.iconRgt,
+	   items=model.items,
+	   fn_ccSelect=model.fn_ccSelect,
+	   imgPath=model.imgPath,
+	   ccDetails={ccs:model.ccDetails};
+%>
+<tr>
+	<th>Color</th>		
+	<th>Color Code</th>	
+	<th class="selCC">Common Color</th>
+	<th class="dspCC">Common Color</th>	
+	<th><%=model.toolhead%></th>
+</tr>	
+<%					
+_.each(items,function(item,idx){
+	ccDetails.Color_ID=item.Color_ID;
+	ccDetails.CommonColor_ID=item.CommonColor_ID;
+%>
+	<tr data-id="<%=item.Color_ID%>">
+		<td><%=item.Color%>&nbsp;</td>
+		<td><%=item.ColorCode%>&nbsp;</td>		
+		<td class="selCC"><%=fn_ccSelect(ccDetails)%>&nbsp;</td>
+		<td class="clrCC_<%=item.Color_ID%> dspCC"><%=item.CommonColor%>&nbsp;</td>		
+		<td>
+			<span class="<%=iconRgt%> addTo" data-fn="moveItem"></span>&nbsp;
+			<span class="<%=iconTr%> delFrm" data-fn="moveItem"></span>
+		</td>		
+	</tr>
+<%;})%>
+</script>
+
+
+
+<script type="text/template" id="template-CommonColorSelect">	 
+<select data-id="<%=m.Color_ID%>" data-fn="setCommonColor">
+<option value="0"></option>
+<% _.each(m.ccs,function(cc,i){
+	var sel= (cc.CommonColor_ID==m.CommonColor_ID) ? " selected " : "";
+	%>
+<option <%=sel%> value="<%=cc.CommonColor_ID%>"><%=cc.CommonColor%></option>
+<%;})%>
+</select>
+</script>
+
+
+<script type="text/template" id="template-catSelect">	 
+<select id="Catalog_ID" data-fn="changeCatalog">
+<option value="0">All Catalogs</option>
+<% _.each(m.rows,function(r,i){
+	m.catHash[r.Catalog_ID]=r.Catalog;
+%>
+<option data-active="1" value="<%=r.Catalog_ID%>"><%=r.Catalog%></option>
+<%;})%>
+</select>
+</script>
+
+
+
+<script type="text/template" id="template-ColorStoryList">	 
+<table class="table table-hover table-condensed">
+<tr>
+	<th>Color Story Name</th>	
+	<th>Catalog</th>	
+	<th>Created By</th>
+	<th>Edit Date</th>	
+	<th>Action</th>
+</tr>
+
+<%  var catalogText;
+	_.each(model.List,function(r,i){
+		catalogText=(r.Catalog=="") ? "Any" : r.Catalog;
+		%>			
+			<tr>			
+			<td><a data-fn="colorStoryEdit" data-id="<%=r.ColorStory_ID%>" data-mode="Edit" href="#"><%=r.ColorStoryName%></a></td>			
+			<td><%=catalogText%></td>
+			<td><%=r.FirstName%> <%=r.LastName%></td>
+			<td><%=dateFormat(new Date(r.LastEditDate),"mmm d, yyyy")%></td>		
+			<td><a href="#"><i data-fn="copyColorStory" data-id="<%=r.ColorStory_ID%>" class="icon-repeat"></i></a>&nbsp;
+			    <a href="#"><i data-fn="confirmDelColorStory" data-id="<%=r.ColorStory_ID%>" class="icon-trash"></i></a>
+			</td>				
+			</tr>
+	<%})%>
+<tr><td colspan="5"><input class="btn" type="button" value="New Color Story" data-fn="newColorStory"></td><tr>	
+</table>
+</script>
+
+	
+
+	<div class="loaderDisplay hidePdf processing-div hide" id="loadingDIV" style="left: 1280px; top: 695px; display: none;">
+		<div class="row">
+			<div class="span2 well">
+				<div class="progress progress-striped active">
+					<div class="bar" style="width: 100%;">Processing...</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="modalOverlay" class="black-overlay hidePdf"></div>
+	<div id="loadingDIVOverlay" class="black-overlay hidePdf" style="z-index: 3019 !important; top: 0px; height: 1390px; display: none;"></div>
+
+	<iframe id="WorkArea" class="hidePdf" name="WorkArea" width="100%" height="100%" scrolling="auto" frameborder="0" marginheight="0" marginwidth="0" src=""></iframe>
+	
+		<form id="sf_GoBack" method="post" action="/AppRoot/UserAdmin/ReloadApp.cfm">
+			<input type="hidden" name="User_ID" value="8649"> <input type="hidden" name="Gn_SupplierID" value="7615"> <input type="hidden" name="VerticalNet_Flg" value="1"> <input type="hidden" name="Going_Back" value="1">
+		</form>
+	
+
+</td></tr></tbody></table></div></div></div>
+
+  </body>
+</html>
+

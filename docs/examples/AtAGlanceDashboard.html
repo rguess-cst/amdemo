@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>New</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="../../bootstrap311/less/bootstrap.css" rel="stylesheet">
+    <link href="../assets/css/glyphicons.css" rel="stylesheet">
+   <link href="../assets/css/halflings.css" rel="stylesheet">
+
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+  </head>
+
+
+
+<!--- script includes are at bottom --->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery.js"></script>
+	<script src="../../js/jquery-ui-1.8.13.custom.min.js"></script>
+	<link href="../../jquery_ui_themes.1.8.13/ui-lightness/jquery-ui-1.8.13.custom.css">
+
+
+  <script language="javascript">
+
+	$(document).ready(function()
+	{
+		$(".region").hide();
+		$(".ataglance").hide();
+		$(".notes").hide();
+		$(".runbutton").hide();
+		$(".productreports").hide();
+		$(".productcolor").hide();
+		$(".savereport").hide();
+		$(".retailernote").hide();
+		$(".newnote").hide();
+		return;
+	}
+	);
+
+
+function toggleNewNote()
+{
+	$(".newnote").toggle();
+	return;
+}
+
+
+  </script>
+
+ 
+  <body>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12 ">
+			<div class="container-fluid hidePdf" id="menuDIV">
+				<div class="row showMenu">
+					<div class="col-md-2 companyLogo" style="margin-bottom: 5px;">
+							<img class="iconpng" src="/Img/Logos/DemoUS.png" alt="Vendor Logo" border="0">
+					</div>
+					<div class="col-md-9">
+						<div class="container-fluid">
+							<div class="row">
+								<ul class="nav nav-pills">
+									<li class="IVMenuItem " itemid="11"><a href="#"><i class="halflings-icon home"></i> </a></li><li class="dropdown "><a href="#" class="dropdown-toggle" data-toggle="dropdown">Orders <b class="caret"></b></a><ul class="dropdown-menu"><li class="IVMenuItem " itemid="64"><a href="#"><i class="halflings-icon play"></i> Create Order</a></li><li class="IVMenuItem " itemid="18"><a href="#"><i class="halflings-icon folder-close"></i> Order Status</a></li><li class="divider"></li><li class="IVMenuItem " itemid="19"><a href="#"><i class="halflings-icon list"></i> Inventory</a></li><li class="IVMenuItem " itemid="99"><a href="#"><i class="halflings-icon th"></i> iVendix Order Forms</a></li><li class="IVMenuItem " itemid="108"><a href="#"><i class=""></i> Collections</a></li><li class="IVMenuItem " itemid="20"><a href="#"><i class=""></i> Catalogs</a></li><li class="IVMenuItem " itemid="117"><a href="#"><i class=""></i> Download Catalog Information</a></li></ul></li><li class="dropdown "><a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a><ul class="dropdown-menu"><li class="IVMenuItem " itemid="21"><a href="#"><i class="halflings-icon user"></i> My Profile</a></li><li class="IVMenuItem " itemid="22"><a href="#"><i class=""></i> User Management</a></li><li class="IVMenuItem " itemid="23"><a href="#"><i class=""></i> Company Profile</a></li><li class="IVMenuItem " itemid="24"><a href="#"><i class=""></i> Change Language</a></li><li class="divider"></li><li class="IVMenuItem " itemid="59"><a href="#"><i class=""></i> Sales Regions</a></li><li class="IVMenuItem " itemid="89"><a href="#"><i class=""></i> Manage Contact Information</a></li><li class="divider"></li><li class="IVMenuItem " itemid="4"><a href="#"><i class=""></i> Manage Client Error Email Receipt</a></li><li class="IVMenuItem " itemid="58"><a href="#"><i class=""></i> Integration Information</a></li><li class="IVMenuItem " itemid="119"><a href="#"><i class=""></i> Application Settings</a></li></ul></li><li class="IVMenuItem " itemid="14"><a href="#"><i class=""></i> Message Center</a></li>
+									<li class="dropdown "><a href="#" class="dropdown-toggle" data-toggle="dropdown">Reports <b class="caret"></b></a>
+										<ul class="dropdown-menu">
+											<li class="IVMenuItem " itemid="62"><a href="#"><i class=""></i> @AglanCe</a></li>
+											<li class="IVMenuItem " itemid="62"><a href="#"><i class=""></i> Order Reports</a></li>
+											<li class="IVMenuItem " itemid="84"><a href="#"><i class=""></i> Non-B2B Order Reports</a></li>
+											<li class="IVMenuItem " itemid="63"><a href="#"><i class=""></i> User Reports</a></li>
+											<li class="IVMenuItem " itemid="65"><a href="#"><i class=""></i> Audit Reports</a></li>
+											<li class="divider"></li><li class="IVMenuItem " itemid="86"><a href="#"><i class=""></i> Admin Reports</a></li>
+											<li class="IVMenuItem " itemid="92"><a href="#"><i class=""></i> Order Notification Reports</a></li>
+											<li class="IVMenuItem " itemid="118"><a href="#"><i class=""></i> Work In Progress Report</a></li>
+										</ul>
+										
+										</li><li class="dropdown "><a href="#" class="dropdown-toggle" data-toggle="dropdown">Retailers <b class="caret"></b></a><ul class="dropdown-menu"><li class="IVMenuItem " itemid="66"><a href="#"><i class=""></i> Active Retailers</a></li><li class="IVMenuItem " itemid="68"><a href="#"><i class=""></i> Manually Disabled Retailers</a></li><li class="IVMenuItem " itemid="69"><a href="#"><i class=""></i> Discount Groups</a></li><li class="IVMenuItem " itemid="70"><a href="#"><i class=""></i> Sales Regions</a></li></ul></li><li class="dropdown "><a href="#" class="dropdown-toggle" data-toggle="dropdown">Product Administration <b class="caret"></b></a><ul class="dropdown-menu"><li class="IVMenuItem " itemid="71"><a href="#"><i class=""></i> Seasons Management</a></li><li class="IVMenuItem " itemid="72"><a href="#"><i class=""></i> Business Units</a></li><li class="IVMenuItem " itemid="73"><a href="#"><i class=""></i> Catalog Management</a></li><li class="IVMenuItem " itemid="75"><a href="#"><i class=""></i> Inventory Manager</a></li><li class="divider"></li><li class="IVMenuItem " itemid="102"><a href="#"><i class=""></i> Manage Products</a></li><li class="IVMenuItem " itemid="103"><a href="#"><i class=""></i> Manage Catalog Navigation</a></li><li class="IVMenuItem " itemid="104"><a href="#"><i class=""></i> Manage Discounts</a></li><li class="IVMenuItem " itemid="105"><a href="#"><i class=""></i> Manage Prices</a></li><li class="IVMenuItem " itemid="3"><a href="#"><i class=""></i> Manage Price Schedules</a></li><li class="IVMenuItem " itemid="1"><a href="#"><i class=""></i> Manage Product Images</a></li><li class="IVMenuItem " itemid="2"><a href="#"><i class=""></i> Manage Availability</a></li><li class="IVMenuItem " itemid="76"><a href="#"><i class=""></i> Sizes</a></li><li class="IVMenuItem " itemid="77"><a href="#"><i class=""></i> Vertical Sizes</a></li><li class="IVMenuItem " itemid="78"><a href="#"><i class=""></i> Colors</a></li><li class="divider"></li><li class="IVMenuItem " itemid="79"><a href="#"><i class=""></i> Discount Groups</a></li><li class="IVMenuItem " itemid="80"><a href="#"><i class=""></i> Terms Programs</a></li><li class="IVMenuItem " itemid="81"><a href="#"><i class=""></i> Provided Terms Manager</a></li><li class="IVMenuItem " itemid="109"><a href="#"><i class=""></i> Promotions Manager</a></li><li class="IVMenuItem " itemid="120"><a href="#"><i class=""></i> Digital Catalog Builder</a></li><li class="IVMenuItem " itemid="121"><a href="#"><i class=""></i> Color Stories</a></li><li class="IVMenuItem " itemid="122"><a href="#"><i class=""></i> Common Colors</a></li><li class="divider"></li><li class="IVMenuItem " itemid="82"><a href="#"><i class=""></i> Credit Cards</a></li><li class="IVMenuItem " itemid="83"><a href="#"><i class=""></i> Available Ship Methods</a></li></ul></li><li class="dropdown "><a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a><ul class="dropdown-menu"><li class="IVMenuItem " itemid="31"><a href="#"><i class=""></i> Contact CenterStone Technologies</a></li><li class="IVMenuItem " itemid="90"><a href="#"><i class=""></i> Contact Supplier</a></li><li class="IVMenuItem " itemid="91"><a href="#"><i class=""></i> Online Help Documentation</a></li></ul></li><li class="IVMenuItem " itemid="107"><a href="#"><i class=""></i> iVendix 3</a></li><li class="IVMenuItem " itemid="17"><a href="#"><i class="halflings-icon remove"></i> Log Out</a></li>
+									</ul>
+							</div>
+							<div class="row">
+									<ul class="nav nav-pills">
+										<li style="cursor: pointer;" class="hidden-sm" id="mainMenuCreateOrder"><a title="Create an Order" onclick="$.doMenuAction('/iVendix4/index.cfm/hOrder/createOrder',false);"><i class="iVendixHalf-icon createOrder"></i> Create an Order</a></li>
+										<li style="cursor: pointer;" id="mainMenuOrderStatus"><a title="Order Status and Information" onclick="$.doMenuAction('/iVendix4/index.cfm/hOrderDashboard/showOrderDashboard',false);"><i class="iVendixHalf-icon orderStatus"></i> Order Status</a></li>
+										<li style="cursor: pointer;" id="mainMenuInventory"><a title="Inventory" onclick="$.doMenuAction('/iVendix4/index.cfm/hcheckinventory/checkinventory',false);"><i class="iVendixHalf-icon checkInventory"></i> Inventory</a></li>
+										<li style="cursor: pointer;" id="mainMenuInventory"><a title="Inventory" onclick="$.doMenuAction('/iVendix4/index.cfm/hcheckinventory/checkinventory',false);"><i class="iVendixHalf-icon checkInventory"></i> @AglanCe</a></li>
+										</ul>
+							</div>
+						</div>
+					</div>	
+					<div class="col-md-1">
+						<p>CST Admin<br><small>USA Demo Supplier</small></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> <!--- End menu rows --->
+	<div class="row ataglance">
+		<div class="col-md-12">
+			<p class="lead">@aglanCe </p>
+			<p>This reporting area is designed to provide users an overview of forecasts, orders, products, invoices, and notes for selected assortments of accounts. Make an account selection below to begin.</p>
+
+			<div class="btn-group" data-toggle="buttons">
+			  <label class="btn btn-primary ">
+			    <input type="checkbox" > Select Region
+			  </label>
+			  <label class="btn btn-primary ">
+			    <input type="checkbox" > Select a retailer
+			  </label>
+			  <label class="btn btn-primary active">
+			    <input type="checkbox"> See all of my accounts
+			  </label>
+			</div>
+			
+		</div>
+	</div>
+	<div class="row region">
+			<div class="col-md-2">
+				<select class="form-control">
+				  <option>East</option>
+				  <option>Midwest</option>
+				  <option>South</option>
+				  <option>West</option>
+				</select>
+			</div>
+		</div>
+	<div class="row account">
+			<div class="col-md-8">
+				<div class="container" id="retailPickerDIV" style="display: block;">
+												<div class="row"><div style="display:table-cell;"><div style="display:table-row;"><div class="btn-group"><button style="cursor:pointer" class="btn btn-default btn-primary mbutton">Search by: Retailer Name</button><button class="btn btn-default btn-primary mbuttoncaret dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button><ul class="dropdown-menu"><li class="searchselect" style="padding-left:4px;padding-right:4px;cursor:pointer" data-caption="Retailer Name" data-search="RetailerNameLike"><i class="halflings-icon ok ico" style="visibility: visible;"></i> Retailer Name</li><li class="searchselect" style="padding-left:4px;padding-right:4px;cursor:pointer" data-caption="Retailer Address" data-search="RetailerAddressLike"><i class="halflings-icon ok ico" style="visibility: hidden;"></i> Retailer Address</li><li class="searchselect" style="padding-left:4px;padding-right:4px;cursor:pointer" data-caption="Retailer Account Number" data-search="RetailerAccountNumberLike"><i class="halflings-icon ok ico" style="visibility: hidden;"></i> Retailer Account Number</li><li class="searchselect" style="padding-left:4px;padding-right:4px;cursor:pointer" data-caption="Store Name" data-search="StoreNameLike"><i class="halflings-icon ok ico" style="visibility: hidden;"></i> Store Name</li><li class="searchselect" style="padding-left:4px;padding-right:4px;cursor:pointer" data-caption="Store Address" data-search="StoreAddressLike"><i class="halflings-icon ok ico" style="visibility: hidden;"></i> Store Address</li><li class="searchselect" style="padding-left:4px;padding-right:4px;cursor:pointer" data-caption="Store Account Number" data-search="StoreAccountNumberLike"><i class="halflings-icon ok ico" style="visibility: hidden;"></i> Store Account Number</li></ul></div><div style="display:table-cell;padding-left:1px;padding-right:1px;vertical-align:top;"><input class="form-control triggertextbox input-xxlarge" type="text" placeholder="Enter a minimum of 3 characters"></div>
+										<div class="btn-group">
+											<button class="btn btn-default disabled searchbutton" title="Execute Search"><i class="halflings-icon search"></i></button>
+											<button class="btn btn-default disabled clearsearchbutton" title="Clear Search Field"><i class="halflings-icon remove"></i></button>
+										</div>
+									</div>
+								</div>
+						<div class="row"><div class="col-md-12 typeaheadalert"></div></div>
+				</div>
+			</div>				
+		</div>
+
+
+	</div>
+
+	<div class="row runbutton">
+		<div class="col-md-6">
+			<button type="submit" class="btn btn-primary">Next ></button> 
+		</div>
+	</div>
+
+
+<!--- reports --->
+<div class="row reports">
+	<div class="col-md-6">
+	 <span class="label label-info">Reviewing</span>	<h4>Selected Retailer/Region</h4>
+	</div>
+	<div class="col-md-6">
+		<button type="button" class="btn"><i class="halflings-icon search"></i>Change Selection</button>
+	</div>
+</div>
+
+<div class="row reports">
+	<div class="col-md-12">
+		<ul class="nav nav-tabs" role="tablist">
+		  <li><a href="#">Account</a></li>
+		  <li><a href="#">Products</a></li>
+		  <li  class="active"><a href="#">Invoices</a></li>
+		  <li><a href="#">Notes</a></li>
+		</ul>
+	</div>
+</div>
+
+
+<div class="row account">
+	<div class="col-md-10 well">
+		<table class="table table-condensed">
+			<tr>
+				<td colspan="5">
+					<h4>Report Generator</h4>
+					<p>Select additional filtering options and save them for quick retrieval.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><span class="label label-info">Report Option</span></td>
+				<td>
+					<select class="form-control">
+					  <option>Year/Year Summary</option>
+					  <option>Year/Year by Month</option>
+					  <option>Year/Year by Category Summary</option>
+					  <option>Year/Year by Category by Month</option>
+					</select>
+				</td>
+				<td><span class="label label-info"><i class="halflings-icon uni-paperclip white"></i> Saved Reports</span></td>
+				<td>
+					<select class="form-control">
+					  <option>Choose One</option>
+					  <option>2015 Pants Only</option>
+					</select>
+				</td>
+				<td>
+					<button class="btn"><i class="halflings-icon trash"></i> Remove Selected Report</button>
+				</td>
+			</tr>
+			<tr>
+				<td><span class="label label-info"><i class="halflings-icon filter white"></i> Filters</span></td>
+				<td>
+					<select class="form-control">
+					  <option>All Years</option>
+					  <option>2014</option>
+					  <option>2013</option>
+					  <option>2012</option>
+					  <option>2011</option>
+					  <option>2010</option>
+					</select>
+					<select class="form-control">
+					  <option>All Months</option>
+					  <option>Jan</option>
+					  <option>Feb</option>
+					  <option>Mar</option>
+					  <option>April</option>
+					</select>
+				</td>
+				<td colspan="2">
+					<select class="form-control">
+					  <option>All Categories</option>
+					  <option>Pants</option>
+					  <option>Jackets</option>
+					  <option>Footwear</option>
+					</select>
+				</td>
+				<td>
+					<button class="btn btn-info">Hide Forecast Data</button>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<button class="btn btn-primary">Run Report</button>
+				</td>
+				<td>
+					<button class="btn">Save Report</button>
+				</td>
+			</tr>
+		</table>		
+	</div>
+	<div class="col-md-2">
+		<h4>Output Options</h4>
+		<div>
+		  <button type="button" class="btn btn-default btn-md btn-block"><i class="halflings-icon print"></i>Print Chart</button>
+		  <button type="button" class="btn btn-default btn-md btn-block"><i class="halflings-icon print"></i>Print Chart and Tables</button>
+		  <button type="button" class="btn btn-default btn-md btn-block"><i class="halflings-icon download"></i>Download Report Data</button>
+		</div>
+	</div>
+
+</div>	
+
+<div class="row reports accounts">
+	
+	
+	<div class="col-md-12">
+		<table class="table table-bordered table-condensed table-striped">
+			<tr>
+				<th style="text-align: center;">On Pace for Forecast</th>
+				<th style="text-align: center;">On Pace for Discount</th>
+				<th style="text-align: center;">Credit Status</th>
+				<th style="text-align: center;">Credit Limit</th>
+				<th style="text-align: center;">Current Discount</th>
+			</tr>
+			<tr>
+				<td style="text-align: center;"><span class="label label-success">Good</span></td>
+				<td style="text-align: center;"><span class="label label-success">Good</span></td>
+				<td style="text-align: center;"><span class="label label-success">Good</span></td>
+				<td style="text-align: center;">$10,000</td>
+				<td style="text-align: center;">15%</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+
+
+
+<div class="row reports allcategories accounts">
+	<div class="col-md-6">
+		Chart Image and Controls Here
+	</div>
+	<div class="col-md-6">
+		<table class="table table-striped table-condensed table-bordered">
+			<tr>
+				<th>Year <i class="halflings-icon sort"></i></th>
+				<th>Forecast <i class="halflings-icon sort"></i></th>
+				<th>Orders <i class="halflings-icon sort"></i></th>
+			</tr>
+			<tr>
+				<td>2014</td>
+				<td>$5,000.00</td>
+				<td>$3,500.87</td>
+			</tr>
+			<tr>
+				<td>2013</td>
+				<td>$5,000.00</td>
+				<td>$3,500.87</td>
+			</tr>
+			<tr>
+				<td>2012</td>
+				<td>$5,000.00</td>
+				<td>$3,500.87</td>
+			</tr>
+		</table>
+
+<p class="region">
+	Category sample
+</p>
+		<table class="table table-striped table-condensed table-bordered region">
+			<tr>
+				<th>Year <i class="halflings-icon sort"></i></th>
+				<th>Category <i class="halflings-icon sort"></i></th>
+				<th>Forecast <i class="halflings-icon sort"></i></th>
+				<th>Orders <i class="halflings-icon sort"></i></th>
+			</tr>
+			<tr>
+				<td>2014</td>
+				<td>Pants</td>
+				<td>$5,000.00</td>
+				<td>$3,500.87</td>
+			</tr>
+			<tr>
+				<td>2013</td>
+				<td>Shirts</td>
+				<td>$5,000.00</td>
+				<td>$3,500.87</td>
+			</tr>
+			<tr>
+				<td>2012</td>
+				<td>Footwear</td>
+				<td>$5,000.00</td>
+				<td>$3,500.87</td>
+			</tr>
+		</table>
+
+	</div>
+
+</div>
+
+
+<div class="row productreports allcategories">
+	<div class="col-md-12">
+		<div class="btn-group">
+		  <button type="button" class="btn btn-default"><i class="halflings-icon print"></i>Print Chart</button>
+		  <button type="button" class="btn btn-default"><i class="halflings-icon print"></i>Print Chart and Table</button>
+		  <button type="button" class="btn btn-default"><i class="halflings-icon download"></i>Download Table Data</button>
+		</div>
+	</div>
+</div>
+
+<div class="row productreports">
+	<div class="col-md-4"> Chart image and controls here</div>
+	<div class="col-md-4">
+		<h4>{supplier name} Top 15 Products</h4>
+		<table class="table table-bordered table-condensed table-striped productcolor">
+			<tr>
+				<th>Rank</th>
+				<th>Item</th>
+				<th>Color</th>
+				<th>Volume (%)</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>1234 Jacket</td>
+				<td>Red</td>
+				<td>14</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>1234 Jacket</td>
+				<td>Blue</td>
+				<td>6</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>7890 Pant</td>
+				<td>Green</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<td>15</td>
+				<td>4562 Sweater Pant</td>
+				<td>Yellow</td>
+				<td>3.8</td>
+			</tr>
+		</table>
+		<table class="table table-bordered table-condensed table-striped productNocolor">
+			<tr>
+				<th>Rank</th>
+				<th>Item</th>
+				<th>Volume (%)</th>
+				<th>Retailer top seller</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>1234 Jacket</td>
+				<td>14</td>
+				<td><i class="halflings-icon check"></i></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>2345 Jacket</td>
+				<td>6</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>7890 Pant</td>
+				<td>4</td>
+				<td><i class="halflings-icon check"></i></td>
+			</tr>
+			<tr>
+				<td>15</td>
+				<td>4562 Sweater Pant</td>
+				<td>3.8</td>
+				<td><i class="halflings-icon check"></i></td>
+			</tr>
+		</table>
+	</div>
+	<div class="col-md-4">
+		<h4>{retailer name} Top 15 Products</h4>
+		<table class="table table-bordered table-condensed table-striped productcolor">
+			<tr>
+				<th>Rank</th>
+				<th>Item</th>
+				<th>Color</th>
+				<th>Volume (%)</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>1234 Jacket</td>
+				<td>Red</td>
+				<td>14</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>2345 Jacket</td>
+				<td>Blue</td>
+				<td>6</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>7890 Pant</td>
+				<td>Green</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<td>15</td>
+				<td>4562 Sweater Pant</td>
+				<td>Yellow</td>
+				<td>3.8</td>
+			</tr>
+		</table>
+		<table class="table table-bordered table-condensed table-striped productNocolor">
+			<tr>
+				<th>Rank</th>
+				<th>Item</th>
+				<th>Volume (%)</th>
+				<th>Supplier top seller</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>1234 Jacket</td>
+				<td>14</td>
+				<td><i class="halflings-icon check"></i></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>1928 Jumpsuit</td>
+				<td>6</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>7890 Pant</td>
+				<td>4</td>
+				<td><i class="halflings-icon check"></i></td>
+			</tr>
+			<tr>
+				<td>15</td>
+				<td>4562 Sweater Pant</td>
+				<td>3.8</td>
+				<td><i class="halflings-icon check"></i></td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+<!-- end main div -->
+</div>
+
+
+
+
+<div class="container notes">
+<h2>Notes</h2>
+			<p class="bg-info">This page will be for supplier users only. Retailer users that selected the @aglanCe report option will be taken directly to the report dashboard with their selection.</p>
+			<p class="bg-info">The region option will only display for reps assigned to a region or sales managers. It should be a multiple select.</p>
+			<p class="bg-info">Run button will not light until a selection is made. Changing the radio selection will automatically disable any other selections.</p>
+	
+</div>
+
+<p></p>
+<p></p>
+<p></p>
+
+<div class="container savereport">
+	<div class="col-md-6 well">
+	  <div class="form-group">
+	    <label for="inputEmail3" class="col-sm-2 control-label">Report Name</label>
+	    <div>
+	      <input type="email" class="form-control" id="inputEmail3" placeholder="Enter a report name to help you recall this scenario quickly.">
+	    </div>
+	  </div>
+	  <button class="btn btn-primary">Save</button>	  <button class="btn">Cancel</button>
+	</div>
+
+</div>
+
+
+<!-- notes -->
+
+<div class="container retailernote">
+	<div class="row">
+		<div class="col-md-2">
+			<h4>Notes</h4>
+			<div style="padding-bottom: .5em;">
+				<button class="btn btn-default" onclick="toggleNewNote()"><i class="halflings-icon pencil"></i>New Note</button>
+			</div>
+		</div>
+		<div class="col-md-10 newnote">
+
+			<form class="form-horizontal" role="form">
+			  <div class="form-group">
+	   			<label for="inputEmail3" class="col-sm-2 control-label">Subject</label>
+	   	    	<div class="col-sm-10">
+			      <input type="email" class="form-control" id="inputEmail3">
+			    </div>
+			  </div>
+			  <div class="form-group">
+	   			<label for="inputEmail3" class="col-sm-2 control-label">Body</label>
+			    <div class="col-sm-10">
+			    	<textarea class="form-control"></textarea>
+			    </div>
+			  </div>
+			  <div class="form-group">
+	   			<label for="inputEmail3" class="col-sm-2 control-label">Type</label>
+			    <div class="col-sm-4">
+			    	<select class="form-control">
+			    		<option>Info</option>
+			    		<option>To Do</option>
+			    		<option>Completed</option>
+			    	</select>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <div class="col-sm-offset-2 col-sm-10">
+			      <button type="submit" class="btn btn-default" onclick="toggleNewNote()">Save Note</button>
+			    </div>
+			  </div>
+			</form>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<table class="table table-bordered table-condensed table-striped">
+				<tr>
+					<th>Subject  <i class="halflings-icon sort"></i></th>
+					<th>Entered by  <i class="halflings-icon sort"></i></th>
+					<th>Last Updated <i class="halflings-icon sort"></i></th>
+					<th>Type  <i class="halflings-icon sort"></i></th>
+					<th>Action</th>
+				</tr>
+				<tr>
+					<td>Left message to discuss Spring 2015 order</td>
+					<td>Joe sales rep</td>
+					<td>Jul 15, 2014</td>
+					<td><span class="label label-warning">To Do</span></td>
+					<td><button class="btn btn-default"><i class="halflings-icon edit"></i>Edit</button> <button class="btn btn-default"><i class="halflings-icon trash"></i>Delete</button></td>
+				</tr>
+				<tr>
+					<td>Needs Spring 2015 Catalog</td>
+					<td>Joe sales rep</td>
+					<td>Jul 1, 2014</td>
+					<td><span class="label label-success">Completed</span></td>
+					<td><button class="btn btn-default"><i class="halflings-icon edit"></i>Edit</button> <button class="btn btn-default"><i class="halflings-icon trash"></i>Delete</button></td>
+				</tr>
+				<tr>
+					<td>First Order completed</td>
+					<td>Joe sales rep</td>
+					<td>Mar 2, 2014</td>
+					<td><span class="label label-info">Info</span></td>
+					<td><button class="btn btn-default"><i class="halflings-icon edit"></i>Edit</button> <button class="btn btn-default"><i class="halflings-icon trash"></i>Delete</button></td>
+				</tr>
+				<tr>
+					<td>Initial account meeting.</td>
+					<td>Joe sales rep</td>
+					<td>Mar 1, 2014</td>
+					<td><span class="label label-info">Info</span></td>
+					<td><button class="btn btn-default"><i class="halflings-icon edit"></i>Edit</button> <button class="btn btn-default"><i class="halflings-icon trash"></i>Delete</button></td>
+				</tr>
+				<tr>
+					<td>Initial account meeting.</td>
+					<td>Joe sales rep</td>
+					<td>Mar 1, 2014</td>
+					<td><span class="label label-info">Info</span></td>
+					<td><button class="btn btn-default"><i class="halflings-icon edit"></i>Edit</button> <button class="btn btn-default"><i class="halflings-icon trash"></i>Delete</button></td>
+				</tr>
+				
+			</table>
+		</div>
+	</div>
+
+</div>
+
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+
+
+<div class="container retailernote">
+	<div class="row">
+		<div class="col-md-6">
+			Delete this note?  <button class="btn btn-primary">Yes</button>	  <button class="btn">No</button>
+		</div>
+	</div>
+</div>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+
+<div class="container retailernote">
+	<div class="row">
+		<div class="col-md-6">
+			<p><span class="label label-info">Left message to discuss Spring 2015 Order</span></p>
+			<p>Left a message for lead buyer to work on the next order. I have shared an order for her in iVGuide. We should be able to get it completed.
+
+Update: Just got the order confirmed!
+</p>
+			<p><span class="label label-default">Jul 15, 2014</span></p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<p><span class="label label-info">Needs Spring 2015 Catalog</span></p>
+			<p>Need to get a copy of the catalog to Jim.
+</p>
+			<p><span class="label label-default">Jul 1, 2014</span></p>
+		</div>
+	</div>
+</div>
+
+
+<div class="container invoices">
+	<div class="row">
+		<div class="col-md-12">
+			<h4>Invoice Information</h4>
+			<table class="table table-bordered table-striped table-condensed">
+				<tr>
+					<th>Number</th>
+					<th>Date</th>
+					<th>Age</th>
+					<th>Amount</th>
+					<th>Status</th>
+					<th>Payment</th>
+				</tr>
+				<tr>
+					<td>1234</td>
+					<td>Jul 1, 2014</td>
+					<td>30 days</td>
+					<td>$1,545.0 USD</td>
+					<td><span class="label label-default">Open</span></td>
+					<td><button class="btn btn-default">Pay Now</button></td>
+				</tr>
+				<tr>
+					<td>1222</td>
+					<td>Jun 1, 2014</td>
+					<td>60 days</td>
+					<td>$1,545.0 USD</td>
+					<td><span class="label label-default">Open</span></td>
+					<td><span class="label label-default">Pending</span></td>
+				</tr>
+				<tr>
+					<td>1222</td>
+					<td>Jun 1, 2014</td>
+					<td>60 days</td>
+					<td>$1,545.0 USD</td>
+					<td><span class="label label-default">Open</span></td>
+					<td><button class="btn btn-default">Pay Now</button> <i class="halflings-icon credit_card"></i> <span class="label label-danger">Incomplete Transaction</span></td>
+				</tr>
+				<tr>
+					<td>1122</td>
+					<td>Jun 1, 2013</td>
+					<td>&nbsp;</td>
+					<td>$1,545.0 USD</td>
+					<td colspan="2"><span class="label label-success">Paid</span></td>
+				</tr>
+				<tr>
+					<td>1022</td>
+					<td>Jun 1, 2012</td>
+					<td>&nbsp;</td>
+					<td>$1,545.0 USD</td>
+					<td colspan="2"><span class="label label-success">Paid</span></td>
+				</tr>
+			</table>
+
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-8">
+			<h4>Pay Invoice 1234</h4>
+			<div>
+			<table class="table table-bordered table-striped table-condensed">
+				<tr>
+					<th>Number</th>
+					<th>Date</th>
+					<th>Amount</th>
+				</tr>
+				<tr>
+					<td>1234</td>
+					<td>Jul 1, 2014</td>
+					<td>$1,545.0 USD</td>
+				</tr>
+			</table>
+
+			</div>
+			<div>
+				This form will be based on the supplier's credit card implementation.
+			</div>
+			<form class="form-horizontal" role="form">
+			  <div class="form-group">
+	   			<label for="inputEmail3" class="col-sm-2 control-label">Credit Card Number</label>
+	   	    	<div class="col-sm-10">
+			      <input type="email" class="form-control" id="inputEmail3">
+			    </div>
+			  </div>
+			  </div>
+			  <div class="form-group">
+			    <div class="col-sm-10">
+			      <button type="submit" class="btn btn-primary">Pay Invoice Now</button>
+			    </div>
+			  </div>
+			</form>
+		</div>
+
+</div>
+
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Search</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+	<link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../assets/css/glyphicons.css" rel="stylesheet">
+	
+	
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+  </head>
+
+<!--- script includes are at bottom --->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+	<script src="../../js/jquery-ui-1.8.13.custom.min.js"></script>
+	<link href="../../jquery_ui_themes.1.8.13/ui-lightness/jquery-ui-1.8.13.custom.css">
+	<script src="../../js/divController.js"></script>
+
+
+  <script language="javascript">
+
+	$(document).ready(function()
+		{
+			//$("#searchdiv").draggable();
+		}
+	);
+
+	function showDemo()
+	{
+		$(".btn").show();
+		$(".input-xxlarge").show();
+	}
+
+  </script>
+  
+  
+  
+  <body>
+
+	<div class="container">
+		<div class="row span12">
+			<div class="input-prepend">
+					<div class="btn-group">
+						<button class="btn dropdown-toggle" data-toggle="dropdown">Search by <span class="caret"></span></button>
+						<ul class="dropdown-menu">
+							<li><a href="#">Retailer</a></li>
+							<li><a href="#">Store</a></li>
+							<li><a href="#">Address</a></li>
+							<li><a href="#">Account Number</a></li>
+						</ul>
+							<input class="span6" id="prependedDropdownButton" type="text" placeholder="Enter a minimum of 3 characters">
+							<button class="btn btn-primary" title="Execute Search" onclick="showDemo()"><i class="icon-search icon-white"></i></button>
+							<button class="btn" title="Clear Search Field" ><i class="icon-remove"></i></button>
+					</div><!-- /btn-group -->
+			</div><!-- /input-prepend -->
+		</div>
+	</div>
+
+
+<span class="requiredField">This is a required field.</span>
+
+<div class="span10">
+	User will select a search option.<br>
+	Enter a minimum of 3 characters. If less than 3 are entered, the user should receive tooltip with message: "A minimum of 3 characters is required"<br>
+	If a pause is detected, the form would submit, and return the data to the same form field as a typeahead <br>
+	User could also hit the search icon for the same action <br>
+	Clear button would remove all data from search field
+</div>
+	
+	</body>
+</html>
+

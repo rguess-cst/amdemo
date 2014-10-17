@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>iVendix - Multi Path</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+	<link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../assets/css/glyphicons.css" rel="stylesheet">
+
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+  </head>
+
+
+
+<!--- script includes are at bottom --->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+	<script src="../../js/jquery-ui-1.8.13.custom.min.js"></script>
+	<link href="../../jquery_ui_themes.1.8.13/ui-lightness/jquery-ui-1.8.13.custom.css">
+	<script src="../../js/divController.js"></script>
+
+
+  <script language="javascript">
+
+	$(document).ready(function()
+	{
+		//$(".ivendix4").hide();
+		$(".codename").show();
+		$(".guidehd").hide();
+		$(".productArea").hide();
+		$(".viewsArea").hide();
+		$(".cartArea").hide();
+		$(".catalog").hide();
+		$(".productTools").hide();
+		$(".collections").hide();
+		$(".collections1").hide();
+		$(".collections2").hide();
+		$(".collections4").hide();
+		$(".catalogSplash").hide();
+		$(".pickRetailer").hide();
+		$(".selectedRetailer").hide();
+		$(".collections3").hide();
+		$(".filterOptions").hide();
+		$(".automatedSub").hide();
+		$(".guidedSub").hide();
+		$(".collectionManager").hide();
+		$(".collections4").hide();
+		$(".collectionPrice").hide();
+	}
+	);
+
+	function toggleAutomated()
+	{
+		$(".automatedSub").show();
+		$(".guidedSub").hide();
+		$(".collections4").hide();
+		$(".collectionPrice").hide();
+		
+	}
+	function toggleGuided()
+	{
+		$(".automatedSub").hide();
+		$(".guidedSub").show();
+	}
+
+	function toggleApps()
+	{
+		$(".ivendix4").toggle();
+		$(".guidehd").toggle();
+		$(".pickRetailer").show();
+		$(".guideNav").hide();
+	}
+
+	function toggleGuide(showMe)
+	{
+		$(".productArea").hide();
+		$(".viewsArea").hide();
+		$(".cartArea").hide();
+		if (showMe == 1){$(".productArea").show(); }
+		if (showMe == 2){$(".viewsArea").show(); }
+		if (showMe == 3){$(".cartArea").show(); }
+	}
+
+	function pickCatalog()
+	{
+		$(".catalog").hide();
+		$(".productTools").show();
+		$(".collections").show();
+	}
+
+	function showCollection()
+	{
+		//$(".productToolsNav").hide();
+		$(".catalogSplash").hide();
+		$(".collections").show();
+		$(".filterOptions").show();
+		$(".collections1").hide();
+		$(".collections2").hide();
+		$(".collections3").hide();
+		$(".collectionPrice").hide();
+	}
+
+	function showCollection1()
+	{
+		$(".collections").hide();
+		$(".collections1").show();
+		$(".collections2").hide();
+		$(".collections3").hide();
+		$(".collections4").hide();
+		$(".collectionPrice").show();
+	}
+
+	function showCollection4()
+	{
+		//$(".productToolsNav").hide();
+		$(".catalogSplash").hide();
+		$(".collections").hide();
+		$(".collections4").show();
+		$(".collectionPrice").show();
+	}
+
+	function showCollectionManager()
+	{
+		$(".pickRetailer").hide();
+		$(".guideNav").hide();
+		$(".collections1").hide();
+		$(".collections2").hide();
+		$(".collections3").hide();
+		$(".codename").hide();
+		$(".collectionManager").show();
+	}
+
+	function showCollection3()
+	{
+		$(".collections").hide();
+		$(".collections1").hide();
+		$(".collections2").hide ();
+		$(".collections3").show();
+	}
+
+	function advanceCollection()
+	{
+		$(".collections1").hide();
+		$(".collections2").show();
+		$(".collections3").hide ();
+	}
+	
+	function showCatalogs()
+	{
+		$(".guideNav").show();
+		$(".pickRetailer").hide();
+		$(".selectedRetailer").show();
+		$(".productArea").show();
+		$(".catalog").show();
+		$(".codename").hide();
+	}
+  </script>
+
+ 
+  <body>
+
+
+<div class="container-fluid ivendix4">
+	<div class="row-fluid">
+		<div class="hidden-phone span2">
+			<img src="../../img/iVendix.png" style="height: 110px;">
+		</div>
+
+		<div class="span10">
+			<div id="menus">
+				<ul class="nav nav-pills hidden-phone"><li class="IVMenuItem " itemid="12"><a href="#"><i class="icon-home"></i> Home</a></li><li class="dropdown "><a href="#" class="dropdown-toggle" data-toggle="dropdown">Orders <b class="caret"></b></a><ul class="dropdown-menu"><li class="IVMenuItem " itemid="65"><a href="#"><i class="icon-star-empty"></i> Create Order</a></li><li class="divider"></li><li class="IVMenuItem " itemid="19"><a href="#"><i class="icon-inbox"></i> Order Status</a></li><li class="IVMenuItem " itemid="20"><a href="#"><i class="icon-ok"></i> Inventory</a></li><li class="IVMenuItem hidden-tablet" itemid="100"><a href="#"><i class="icon-th"></i> iVendix Order Forms</a></li><li class="IVMenuItem " itemid="112"><a href="#" onclick="showCollectionManager()"><i class=""></i> Collections</a></li><li class="IVMenuItem hidden-tablet" itemid="21"><a href="#"><i class=""></i> Catalogs</a></li></ul></li><li class="dropdown hidden-tablet"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class=""></i> Admin <b class="caret"></b></a><ul class="dropdown-menu"><li class="IVMenuItem " itemid="22"><a href="#"><i class="icon-user"></i> My Profile</a></li><li class="IVMenuItem hidden-tablet" itemid="23"><a href="#"><i class=""></i> User Profiles</a></li><li class="IVMenuItem " itemid="24"><a href="#"><i class=""></i> Company Profile</a></li><li class="IVMenuItem " itemid="25"><a href="#"><i class=""></i> Change Language</a></li><li class="divider"></li><li class="IVMenuItem hidden-tablet" itemid="60"><a href="#"><i class=""></i> Sales Regions</a></li><li class="divider"></li></ul></li><li class="IVMenuItem hidden-tablet" itemid="15"><a href="#"><i class=""></i> Message Center</a></li><li class="dropdown "><a href="#" class="dropdown-toggle" data-toggle="dropdown">Reports <b class="caret"></b></a><ul class="dropdown-menu"><li class="IVMenuItem " itemid="63"><a href="#"><i class=""></i> Order Reports</a></li><li class="IVMenuItem " itemid="64"><a href="#"><i class=""></i> User Reports</a></li><li class="divider"></li></ul></li><li class="dropdown "><a href="#" class="dropdown-toggle" data-toggle="dropdown">Retailers <b class="caret"></b></a><ul class="dropdown-menu"><li class="IVMenuItem " itemid="67"><a href="#"><i class=""></i> Active Retailers</a></li><li class="IVMenuItem hidden-tablet" itemid="70"><a href="#"><i class=""></i> Discount Groups</a></li><li class="IVMenuItem hidden-tablet" itemid="71"><a href="#"><i class=""></i> Sales Regions</a></li><li class="IVMenuItem hidden-tablet" itemid="82"><a href="#"><i class=""></i> Provided Terms Manager</a></li></ul></li><li class="dropdown "><a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a><ul class="dropdown-menu"><li class="IVMenuItem " itemid="32"><a href="#"><i class=""></i> Contact CenterStone Technologies</a></li><li class="IVMenuItem " itemid="91"><a href="#"><i class=""></i> Contact Supplier</a></li><li class="IVMenuItem " itemid="92"><a href="#"><i class=""></i> Online Help Videos</a></li></ul></li><li class="IVMenuItem " itemid="18"><a href="#"><i class="icon-eject"></i> Exit</a></li></ul>
+<ul class="nav nav-pills">
+	<li style="cursor: pointer;" class="hidden-phone"><a title="Create an Order" onclick="$.doMenuAction('/iVendix4/index.cfm/hOrder/createOrder',false);"><i class="glyphicons-icon paperclip"></i> Create an Order</a></li>
+	<li style="cursor: pointer;"><a title="Order Status and Information" onclick="$.doMenuAction('/iVendix4/index.cfm/hOrderDashboard/showOrderDashboard',false);"><i class="glyphicons-icon inbox "></i> Order Status</a></li>
+	<li style="cursor: pointer;"><a title="Check Inventory" onclick="$.doMenuAction('/iVendix4/index.cfm/hcheckinventory/checkinventory',false);"><i class="glyphicons-icon ok_2"></i> Check Inventory</a></li>
+	<li style="cursor: pointer;"><a title="Guide " onclick="toggleApps()"><i class="glyphicons-icon global"></i> Guide </a></li>
+</ul>
+			</div>
+		</div>
+	</div>
+</div>				
+
+<div class="container-fluid guidehd">
+	<div class="row-fluid">
+		<div class="span2">
+			<a href="#" onclick="toggleApps()" data-toggle="tab" title="Return to main application." class="btn btn-mini"><i class="icon-home"></i> iVendix</a>
+				<div class="tab-content productTools">Selected Catalog</div>
+		</div>		
+		<div class="span8 pull-left">
+			<div class="pickRetailer">
+				<div>
+						<ul class="nav">
+						  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="glyphicons-icon history"></i> Load a previous session<b class="caret"></b></a>
+	   							<ul class="dropdown-menu">
+	   								<li><a href="#" onclick="showCatalogs()">Catalog X, Retailer 123</a></li>
+	   								<li class="divider"></li>
+	   								<li><a href="#" onclick="showCatalogs()">Catalog Y, Retailer 123</a></li>
+	   								<li><a href="#" onclick="showCatalogs()">Catalog Y, Retailer 456</a></li>
+	   								<li><a href="#" onclick="showCatalogs()">Catalog Y, Retailer 789</a></li>
+	   								<li class="divider"></li>
+	   								<li><a href="#" onclick="showCatalogs()" title="Have been through the catatlog once, have several likes">Catalog Z, Retailer 789</a></li>
+	   								<li class="divider"></li>
+	   								<li><a href="#" onclick="showCatalogs()">Catalog A, Retailer 579</a></li>
+	   								<li><a href="#" onclick="showCatalogs()">Catalog A, Retailer 357</a></li>
+	   								<li><a href="#" onclick="showCatalogs()">Catalog A, Retailer 246</a></li>
+	   								<li><a href="#" onclick="showCatalogs()">Catalog A, Retailer 135</a></li>
+	   							</ul>
+						  </li>
+						</ul>		
+					</div>
+					
+
+				<div class="input-prepend"><div class="btn-group"><a style="cursor:pointer" class="btn btn-primary mbutton dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-pencil icon-white"></i> Search by Retailer Name</a><a class="btn btn-primary mbuttoncaret  dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a><ul class="dropdown-menu"><li class="searchselect" style="cursor:pointer" data-caption="Retailer Name" data-search="RetailerNameLike"><i class="icon-ok ico" style="visibility: visible;"></i> Retailer Name</li><li class="searchselect" style="cursor:pointer" data-caption="Retailer Address" data-search="RetailerAddressLike"><i class="icon-ok ico" style="visibility: hidden;"></i> Retailer Address</li><li class="searchselect" style="cursor:pointer" data-caption="Retailer Account Number" data-search="RetailerAccountNumberLike"><i class="icon-ok ico" style="visibility: hidden;"></i> Retailer Account Number</li><li class="searchselect" style="cursor:pointer" data-caption="Store Name" data-search="StoreNameLike"><i class="icon-ok ico" style="visibility: hidden;"></i> Store Name</li><li class="searchselect" style="cursor:pointer" data-caption="Store Address" data-search="StoreAddressLike"><i class="icon-ok ico" style="visibility: hidden;"></i> Store Address</li><li class="searchselect" style="cursor:pointer" data-caption="Store Account Number" data-search="StoreAccountNumberLike"><i class="icon-ok ico" style="visibility: hidden;"></i> Store Account Number</li></ul><input class="input-large triggertextbox" type="text" placeholder="Enter a minimum of 3 characters">
+				<button class="btn btn-primary searchbutton" title="Execute Search" onclick="showCatalogs()"><i class="icon-search icon-white"></i></button>
+				<button class="btn clearsearchbutton" title="Clear Search Field"><i class="icon-remove"></i></button>
+				</div>
+			</div>
+			<div class="container typeaheadalert"></div>
+			</div>
+			<div class="selectedRetailer">
+				<table class="table-condensed">
+					<tr>
+						<td title="1675 Larimer St, Ste 360,Denver Co,303.763.7325,Buyer name, buyer email">
+							Retailer  Name, Retailer Account
+						</td>
+						<td>
+							<input type="text" placeholder="Enter comment about the status of this session." class="input-xxlarge">
+						</td>
+						<td>
+							<a href="#" class="btn btn-mini btn-primary" title="Save Guide session data."><i class="icon-file icon-white"></i></a>							
+						</td>
+					</tr>
+				</table>
+			</div>
+
+
+		  <ul class="nav nav-tabs guideNav">
+			<li class="active"><a href="#" onclick="toggleGuide(1)" data-toggle="tab" title="Find Products"><i class="glyphicons-icon book"></i> Product</a></li>
+			<li><a href="#" onclick="toggleGuide(3)" data-toggle="tab" title="Enter quantities, select shipments."><i class="glyphicons-icon shopping_cart"></i> Cart</a></li>
+			<li><a href="#" onclick="toggleGuide(2)" data-toggle="tab" title="See advanced automated views and Guided views"><i class="glyphicons-icon camera"></i> Views</a></li>
+			<li><a href="#" data-toggle="tab" title="Submit the order."><i class="glyphicons-icon play"></i> Checkout</a></li>
+		  </ul>
+
+		</div>
+		
+		<div class="hidden-phone span2">
+				<img src="../../img/iV_Guide-HD.png">	
+		</div>
+	</div>
+	
+	<div class="row-fluid">
+		<div class="productArea span12">
+			<div class="container-fluid">
+				<div class="row-fluid catalog">
+					<ul class="thumbnails">
+					  <li class="span2">
+					    <a href="#" onclick="pickCatalog()" class="thumbnail">
+					      <img src="../../img/catalog1.jpg">
+					    </a>
+					  </li>
+					  <li class="span2">
+					    <a href="#" onclick="pickCatalog()" class="thumbnail">
+					      <img src="../../img/catalog2.jpg">
+					    </a>
+					  </li>
+					  <li class="span2 disabled">
+					    <a href="#" onclick="pickCatalog()" class="thumbnail">
+					      <img src="../../img/catalog3.jpg">
+					    </a>
+					  </li>
+					 </ul>
+				</div>
+				
+				
+				<div class="row productTools">
+					<div class="navbar productToolsNav">
+					  <div class="navbar-inner" style="height: 72px; !important;">
+						<ul class="nav">
+						  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" title="Collections"><i class="glyphicons-icon tags"></i> <b class="caret"></b></a>
+	   							<ul class="dropdown-menu">
+	   								<li><a href="#" onclick="showCollection()">Collector Collection</a></li>
+									<ul>
+	   								<li><a href="#" onclick="showCollection()">Men's Outdoor - 2014</a></li>
+	   								<li><a href="#" onclick="showCollection()">Women's Outdoor  - 2014</a></li>
+									</ul>
+	   								<li class="divider"></li>
+	   								<li><a href="#" onclick="showCollection()">Men's Alpine Outdoor - 2014</a></li>
+	   								<li><a href="#" onclick="showCollection()">Women's Alpine Outdoor - 2014</a></li>
+	   							</ul>
+						  </li>
+						  <li><a href="#" title="Browse Catalog Navigation"><i class="glyphicons-icon globe"></i> </a></li>
+						  <li><a href="#" title="Catalog Page Number"><i class="glyphicons-icon book_open"></i> </a></li>
+						  <li style="padding-top: 20px;"><input type="text" class="search-query" placeholder="Search"></li>
+						  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> by<b class="caret"></b></a>
+	   							<ul class="dropdown-menu">
+	   								<li>Number</li>
+	   								<li>Name</li>
+	   								<li>SKU</li>
+	   								<li>Product Attribute</li>
+	   							</ul>
+						  </li>
+						  <li class="dropdown filterOptions"><a class="dropdown-toggle" data-toggle="dropdown" href="#" title="Filter products on screen by the selected critiera."><i class="glyphicons-icon filter"></i><b class="caret"></b></a>
+	   							<ul class="dropdown-menu">
+	   								<li><i class="glyphicons-icon sampler"></i>Color Stories</li>
+	   								<li>Red Black</li>
+	   								<li>Orange</li>
+	   								<li>Blue Green</li>
+	   								<li class="divider"></li>
+	   							</ul>
+						  </li>
+						  <li><a href="#"><i class="glyphicons-icon cogwheels"></i></a></li>
+							 <li class="collectionPrice">
+ 								<a href="#" onclick="orderIt()" title="Order this collection, I will enter quantities.">9 Products <i class="glyphicons-icon cart_in"></i></a>
+							</li>
+							 <li class="collectionPrice">
+								<a href="#" onclick="orderIt()" title="Add the collection with units to order.">27 Units, $1,230 <i class="glyphicons-icon money"></i></a>
+							</li>
+						</ul>
+					  </div>
+					</div>
+				</div>
+				
+					  <div class="span12 catalogSplash">
+					      <img src="../../img/catalog2.jpg">
+					  </div>
+				
+					<div class="collections">
+						<div class="span12"><h4>Available Collections</h4></div>
+						<div class="span2">
+							<a href="#" onclick="showCollection4()" title="Drumset Collection">
+							<img src="../../img/peart.jpg"></a>
+							<h6>9 Units/$1,230</h6>
+						</div>
+						<div class="span2">
+							<a href="#" title="Snare Collection">
+							<img src="../../img/snare.png">
+							<h6>No quantities attached</h6>
+						</div>
+						<div class="span2">
+							<a href="#" title="Snare2 Collection">
+							<img src="../../img/40KitFeatures-1.jpg">
+							<h6>12 Units/$2,230</h6>
+						</div>
+
+					</div>
+					<div class="collections4">
+						<div class="span12">
+							<a href="#" onclick="showCollection1()" title="Drumset Collection">
+							<img src="../../img/peart.jpg"></a>
+						</div>
+					</div>
+					<div class="collections1">
+						<h4>Collector's Collection</h4>
+						<div class="span4">
+							<img src="../../img/snare.png">
+							<div class="btn-group">
+								<a href="#" onclick="orderIt()" class="btn" title="Remove from order"><i class="glyphicons-icon cart_out"></i></a>
+								<a href="#" onclick="unOrderIt()" class="btn"  title="Order It"><i class="glyphicons-icon cart_in"></i></a>
+							</div>
+						</div>
+						<div class="span6 offset1"><h5>40th ANNIVERSARY SNARE DRUM</h5>
+						<p>The standard from which all other DW snare drums are measured, the Collector’s Series Maple is crafted from only the finest hand-selected North American Maple and customized in any California Custom Shop finish and drum hardware color option. Each 10-ply drum is fitted with a 6-ply reinforcement hoop and our 60-degree bearing edge for optimal resonance and attack. A lacquered interior adds brightness to a snare with a full tonal spectrum and plenty of body. The Collector’s Series Maple is the definitive workhorse wood snare drum to own. </p>
+						<p>Availability: 6x10", 5x12", 5x13", 6x13", 4x14", 5x14", 6x14", 7x14", 8x14", 10x14", 4x15", 5x15", 6x15"</p>
+						<p>Video: <a href="http://youtu.be/UZhxyKWO3OU" target="_blank">Tony Royster interview</a> </p>
+						</div>
+						<div class="pull-right">
+							<ul class="pager">
+							  <li><a href="#" onclick="showCollection()"><i class="glyphicons-icon step_backward"></i></a></li>
+							  <li><a href="#" onclick="advanceCollection()"><i class="glyphicons-icon step_forward"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="collections2">
+						<h4>Collector's Collection</h4>
+						<div class="span4">
+							<img src="../../img/40KitFeatures-1.jpg">
+							<div class="btn-group">
+								<a href="#" onclick="orderIt()" class="btn" title="Remove from order"><i class="glyphicons-icon cart_out"></i></a>
+								<a href="#" onclick="unOrderIt()" class="btn"  title="Order It"><i class="glyphicons-icon cart_in"></i></a>
+							</div>
+						</div>
+						<div class="span6 offset1"><h5>Concrete Snare Drum</h5>
+						<p>The standard from which all other DW snare drums are measured, the Collector’s Series Maple is crafted from only the finest hand-selected North American Maple and customized in any California Custom Shop finish and drum hardware color option. Each 10-ply drum is fitted with a 6-ply reinforcement hoop and our 60-degree bearing edge for optimal resonance and attack. A lacquered interior adds brightness to a snare with a full tonal spectrum and plenty of body. The Collector’s Series Maple is the definitive workhorse wood snare drum to own. </p>
+						<p>Availability: 6x10", 5x12", 5x13", 6x13", 4x14", 5x14", 6x14", 7x14", 8x14", 10x14", 4x15", 5x15", 6x15"</p>
+						<p>Video: <a href="http://youtu.be/UZhxyKWO3OU" target="_blank">Tony Royster interview</a> </p>
+						</div>
+						<div class="pull-right">
+							<ul class="pager">
+							  <li><a href="#" onclick="showCollection1()"><i class="glyphicons-icon step_backward"></i></a></li>
+							  <li><a href="#" onclick="showCollection3()"><i class="glyphicons-icon step_forward"></i></a></li>
+							</ul>
+						</div>
+					</div>
+							
+					<div class="collections3">
+						<h4>Collector's Collection - Wood</h4>
+										
+							<div id="contentbg_body span6">
+								<br>
+								<h4>ALL-MAPLE</h4>
+								<p>
+								<a href="../showroom/snares.asp?sKITNAME=snare-all-maple" target="_blank">
+								<img src="http://www.dwdrums.com/images/snares/coll-allmaple.gif">
+								</a>
+												<div class="btn-group">
+													<a href="#" onclick="orderIt()" class="btn" title="Remove from order"><i class="glyphicons-icon cart_out"></i></a>
+													<a href="#" onclick="unOrderIt()" class="btn"  title="Order It"><i class="glyphicons-icon cart_in"></i></a>
+												</div>
+					
+								The standard from which all other DW snare drums are measured, the Collector’s Series Maple is crafted from only the finest hand-selected North American Maple and customized in any California Custom Shop finish and drum hardware color option. Each 10-ply drum is fitted with a 6-ply reinforcement hoop and our 60-degree bearing edge for optimal resonance and attack.  A lacquered interior adds brightness to a snare with a full tonal spectrum and plenty of body. The Collector’s Series Maple is the definitive workhorse wood snare drum to own. 
+								<br><br>Availability: 6x10", 5x12", 5x13", 6x13", 4x14", 5x14", 6x14", 7x14", 8x14", 10x14", 4x15", 5x15", 6x15"
+								</p>
+							</div>
+							<div id="contentbg_body span6">
+								<br>
+								<h4>ALL-BIRCH</h4>
+								<p>
+								<a href="../showroom/snares.asp?sKITNAME=snare-all-birch" target="_blank">
+								<img src="http://www.dwdrums.com/images/snares/coll-allbirch.gif">
+								</a>
+												<div class="btn-group">
+													<a href="#" onclick="orderIt()" class="btn" title="Remove from order"><i class="glyphicons-icon cart_out"></i></a>
+													<a href="#" onclick="unOrderIt()" class="btn"  title="Order It"><i class="glyphicons-icon cart_in"></i></a>
+												</div>
+								Crafted from select Heartwood Birch and personalized in any California Custom Shop finish, The Collector’s Series Birch snare drum provides all of the attack and bright tonality you’d expect from birch.  The 10-ply shell without reinforcement hoop is loud and open, with a higher midrange that’s perfect for a variety of musical situations.  A 60-degree bearing and host of DW high-end features make the Collector’s Birch a must for any serious snare drum collection.
+								<br><br>Availability: 6x10", 5x12", 5x13", 6x13", 4x14", 5x14", 6x14", 7x14", 8x14", 10x14", 4x15", 5x15", 6x15"
+								</p>
+							</div>
+						<div class="pull-right">
+							<ul class="pager">
+							  <li><a href="#" onclick="advanceCollection()"><i class="glyphicons-icon step_backward"></i></a></li>
+							</ul>
+						</div>
+					</div>		
+				</div>
+			</div><!-- end catalog container -->	
+		</div><!-- end product-->
+              
+		<div class="viewsArea span11">
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<div class="navbar">
+					  <div class="navbar-inner" style="min-height: 72px; !important;">
+						<ul class="nav">
+						  <li><a href="#" onclick="toggleAutomated()"><i class="glyphicons-icon roundabout"></i> Automated</a></li>
+						  <li><a href="#" onclick="toggleGuided()"><i class="glyphicons-icon shoe_steps"></i> Guided Merchandising</a> </li>
+						  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="glyphicons-icon history"></i> Saved Views<b class="caret"></b></a>
+	   							<ul class="dropdown-menu">
+	   								<li><a href="#" onclick="showCollection()" title="Have been through the catatlog once, have several likes">SIA Show 2013</a></li>
+	   								<li><a href="#" onclick="showCollection()" title="Have been through the catatlog once, have several likes">Office Review</a></li>
+	   							</ul>
+						  </li>
+						  <li><a href="#"><i class="glyphicons-icon cogwheels"></i></a></li>
+						</ul>
+					  </div>
+					</div>
+				</div>
+				<div class="row-fluid automatedSub">
+					<div class="btn-toolbar offset2">
+					  <div class="btn-group">
+							<a href="#" class="btn">1</a>
+							<a href="#" class="btn">2</a>
+							<a href="#" class="btn">3</a>
+							<a href="#" class="btn">6</a>
+							<a href="#" class="btn">9</a>
+							<a href="#" class="btn">16</a>
+							<a href="#" class="btn">20</a>
+					  </div>
+					  <div class="btn-group">
+						<a href="#" class="btn" title="Filter products on screen by the selected critiera."><i class="icon-filter"></i></a>
+						<a href="#" class="btn">Sort by</a>
+					  </div>
+					  <div class="btn-group">
+							<a href="#" class="btn" title="Save"><i class="icon-file"></i></a>
+							<a href="#" class="btn" title="Delete"><i class="icon-trash"></i></a>
+							<a href="#" class="btn" title="Share"><i class="icon-share-alt"></i></a>
+							<a href="#" class="btn" title="Print"><i class="icon-print"></i></a>
+					  </div>
+
+					</div>
+				</div>
+
+				<div class="row-fluid guidedSub">
+					<div class="btn-toolbar offset2">
+					  <div class="btn-group">
+							<a href="#" class="btn">1/3</a>
+							<a href="#" class="btn">1/6</a>
+							<a href="#" class="btn">1x5</a>
+							<a href="#" class="btn">2x6</a>
+							<a href="#" class="btn">4x3</a>
+							<a href="#" class="btn">5x4</a>
+							<a href="#" class="btn">Custom</a>
+					  </div>
+					  <div class="btn-group">
+							<a href="#" class="btn" title="Save"><i class="icon-file"></i></a>
+							<a href="#" class="btn" title="Delete"><i class="icon-trash"></i></a>
+							<a href="#" class="btn" title="Share"><i class="icon-share-alt"></i></a>
+							<a href="#" class="btn" title="Print"><i class="icon-print"></i></a>
+					  </div>
+					  <div class="btn-group">
+							<a href="#" class="btn">1</a>
+							<a href="#" class="btn" title="New Page"><i class="icon-plus"></i></a>
+					  </div>
+
+					</div>
+					<div>
+						<img src="../../img/Views_Advanced.png">
+						<p>In guided collection, click on image removes it from selected area. This will replace the X icon in the bottom right.</p>
+					</div>
+				</div>
+
+			</div><!-- end view container -->	
+		</div><!-- end views-->
+
+
+
+
+		<div class="cartArea span11">
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<div class="navbar">
+					  <div class="navbar-inner" style="min-height: 72px; !important;">
+
+					<div class="btn-toolbar subnav" id="menubarOrder">
+						<div class="row-fluid ivMenuBar">
+							<div class="btn-group" id="mgShipments"><a id="shipment_1" class="btn" title="Edit Shipment Info" href="#"><i class="icon-edit"></i> Aug 20, 2013</a><a id="menuAddShipment" class="btn" href="#"><i class="icon-plus"></i> Add Shipment</a></div>
+							<div class="btn-group" id="mgTools"><a id="menuTools" class="btn" title="This menu gives you tools to work with while you are building your order. Sopy shipments, clear shipments and more!" href="#"><i class="icon-wrench"></i> Tools</a><a class="btn dropdown-toggle" data-toggle="dropdown" href="#" title="This menu gives you tools to work with while you are building your order. Copy shipments, clear shipments and more!"><span class="caret"></span></a><ul class="dropdown-menu" style="max-height: 500px; overflow-y: auto;">
+							<li id="menuCopyShipments"><a href="#" title="Copy">Copy Shipments</a></li><li id="menuClearShipments"><a href="#" title="Clear">Clear Shipments</a></li><li class="divider"></li><li id="menuCollapseAll" class="disabled"><a href="#" title="Collapse All"><i class="icon-minus"></i> Collapse All</a></li><li id="menuExpandAll" class="disabled"><a href="#" title="Expand All"><i class="icon-plus"></i> Expand All</a></li><li class="divider"></li><li id="menuInventoryLegend"><a href="#" title="Inventory Legend">Inventory Legend</a></li><li id="menuFloatingOrderSummary"><a href="#" title="Order Summary">Order Summary</a></li>
+							</ul></div>
+					</div>
+					</div></div>
+				</div>
+			</div><!-- end catalog container <li id="menuAutomatedViews"><a href="#" title="Automated Views">Automated Views</a></li> -->	
+		</div><!-- end cart-->
+
+	</div>
+
+</div>
+	
+
+
+
+					  <div class="container collectionManager">
+					      <img src="../../img/CollectionManager.png">
+						  <p>
+						  	we will need to add the: ability to favorite, copy, delete, tag 	
+						  </p>
+					  </div>
+	
+
+  <div class="container codename" style="padding-top: 80px; text-align: center;">
+		<img src="../../img/codename.jpg">
+	</div>
+
+			
+
+			
+  </body>
+</html>
+
