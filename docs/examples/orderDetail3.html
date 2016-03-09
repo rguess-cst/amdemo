@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>iVendix - Order Detail</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+	<link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <style>
+
+    </style>
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  </head>
+
+<!--- script includes are at bottom --->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+	<script src="../../js/jquery-ui-1.8.13.custom.min.js"></script>
+	<link href="../../jquery_ui_themes.1.8.13/ui-lightness/jquery-ui-1.8.13.custom.css">
+	<script src="../../js/divController.js"></script>
+
+
+  <script language="javascript">
+  	var divC=new $.divController();
+	
+
+	$(document).ready(function()
+		{
+			$(".write").show();
+			$(".read").hide();
+			//$("#searchdiv").draggable();
+		}
+	);
+
+
+function toggleOrderTypes()
+{
+	$("#openOrders").toggle();
+	$("#closedOrders").toggle();
+}
+
+function ShowCheckoutMode()
+{
+	$(".read").toggle();
+	$(".write").toggle();
+}
+
+function togglenav()
+{
+	$("#navigationDemo").toggle();
+	$(".sortbutton").toggleClass('btn-info');
+	
+}
+
+function toggleTransaction()
+{
+	$(".transactions").toggle();
+}	
+  </script>
+  
+  <body>
+
+      <div class="container-fluid">
+		<div class="row-fluid showMenu">
+		<div class="span2" id="companyLogo">
+			<img src="../../img/iVendix.png">
+		</div>
+		<div class="span10" id="appNavigation">
+		<ul class="nav nav-pills">
+				<li><a href="#"><i class="icon-home"></i> Home</a></li>
+				<li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Orders <b class="caret"></b></a>
+				  <ul class="dropdown-menu">
+					<li><a href="#" onclick="OrdersStep1()"><i class="icon-star-empty"></i> Create an Order</a></li>
+					<li><a href="newivendixrev5_Template.html">Create Order from a Template</a></li>
+					<li><a href="newivendixrev5_SSOF.html">iVendix Order Form</a></li>
+					<li class="divider"></li>
+					<li><a href="orderList1_a.html"><i class="icon-inbox "></i> Order Dashboard</a></li>
+					<li class="divider"></li>
+					<li><a href="#"><i class="icon-ok"></i> Check Inventory</a></li>
+				  </ul>
+				</li>
+				<li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-cog"></i> Admin <b class="caret"></b></a>
+				  <ul class="dropdown-menu">
+					<li><a href="#"><i class="icon-user"></i> My Profile</a></li>
+					<li><a href="#">User Profiles</a></li>
+					<li><a href="#">Company Profiles</a></li>
+					<li><a href="#">Language</a></li>
+				  </ul>
+				</li>
+				<li class="dropdown visible-desktop">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Messages <b class="caret"></b></a>
+				  <ul class="dropdown-menu">
+					<li><a href="#"><i class="icon-file"></i> Shared Files</a></li>
+					<li><a href="#">Posts</a></li>
+				  </ul>
+				</li>
+				<li class="dropdown visible-desktop">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Product Administration<b class="caret"></b></a>
+				  <ul class="dropdown-menu">
+					<li><a href="#">Catalogs, etc.</a></li>
+				  </ul>
+				</li>
+				<li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-question-sign "></i> Help<b class="caret"></b></a>
+				  <ul class="dropdown-menu">
+					<li><a href="#">Contact CenterStone</a></li>
+					<li><a href="#">Contact Client</a></li>
+					<li><a href="#">FAQs</a></li>
+				  </ul>
+				</li>
+				<li><a title="Close this session"><i class="icon-eject"></i> Exit</a></li>
+			</ul>
+			<ul class="nav nav-pills">
+				<li><a title="Create an Order" onclick="OrdersStep1()"><i class="icon-star-empty"></i> Create an Order</a></li>
+				<li><a title="Order Status and Information" href="orderList1_a.html"><i class="icon-inbox "></i> Order Dashboard</a></li>
+				<li><a title="Check Inventory"><i class="icon-ok"></i> Check Inventory</a></li>
+			</ul>
+		</div>
+		</div>
+	</div>
+
+
+	<div class="container-fluid" style="padding-top: 10px;">
+		<div class="row-fluid">
+			<div class="span8">
+		<h4>#application name# 
+				</br>Order Number 1234</h4>
+			</div>
+			<div class="span4" title="this should print the page, supressing the menus and transaction history as indicated below">
+				<div class="btn-group">
+				  <a class="btn btn-inverse" href="#" title="print this page"><i class="icon-print icon-white"></i></a>
+				  <a class="btn btn-inverse" href="#" title="export this as a pdf"><i class="icon-file icon-white"></i></a>
+				</div>
+			</div>
+		</div>
+	<div class="row-fluid">
+		<div class="span4">
+			<h5>Supplier Name</h5>
+							<p>Address</br>
+							Address 2
+							Phone<br>
+							Fax<br>
+							url
+							</p>
+		</div>
+
+		<div class="span8">
+			<table class="table table-condensed">
+				<tr>
+					<td colspan="2">
+						<h5>Fred's Skis</h5>
+						<p>1675 Desting, Suite 550</br>
+						Loggins, CO 80023</br>
+						(303) 763-7325</br>
+						(303) 763-7326 Fax
+						</p>
+						<span class="label">Account Number</span>
+						<p>123234345456567</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div>
+						<span class="label">Billing</span>
+						<p class="read">1675 Desting, Suite 550</br>
+						Loggins, CO 80023</br>
+						(303) 763-7325
+						(303) 763-7326 Fax
+						</p>
+						<p class="write">
+							<select class="input-xxlarge">
+							  <option selected="1">1675 Desting, Suite 550 Loggins, CO 80023</option>
+							  <option>1675 Desting, Suite 550 Loggins, CO 80023</option>
+							</select>
+						</p>
+						</div>
+						<div>
+							<span class="label">Shipping</span>
+							<p class="read">1675 Desting, Suite 550</br>
+							Loggins, CO 80023</br>
+							(303) 763-7325</br>
+							(303) 763-7326 Fax
+							</p>
+							<p class="write">
+								<select class="input-xxlarge">
+								  <option selected="1">1675 Desting, Suite 550 Loggins, CO 80023</option>
+								  <option>1675 Desting, Suite 550 Loggins, CO 80023</option>
+								</select>
+							</p>
+						
+						</div>
+						<div>
+							<span class="label">Store</span>
+							<p class="read">Denver DC</br>
+							1675 Disty Lane</br>
+							Loggins, CO 80023</br>
+							(303) 763-7325</br>
+							(303) 763-7326 Fax
+							</p>
+							<p class="write">
+								<select class="input-xxlarge">
+								  <option selected="1">Denver DC 1675 Disty Lane Loggins, CO 80023</option>
+								  <option>New York DC 1675 Desting New York, NY 12345</option>
+								</select>
+							</p>
+						</div>
+					</td>
+					<td>
+						<div>
+							<span class="label">Buyer</span>
+							<p class="read">Sally Ann Fletcher</br>
+							(303) 763-7326<br>
+							sallyann@fletch.com
+							</p>	
+							<p class="write">
+								<select class="input-large">
+								  <option selected="1">Sally Ann Fletcher</option>
+								  <option>Barney Fife</option>
+								</select>
+							</p>
+						</div>
+						<div class="write">
+							<span class="label">Drop Shipment</span>
+							<p>
+								<a class="btn"> Enter Address</a>
+							</p>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+		<div class="row-fluid">
+				<div class="span6">
+					<h5>Order Information</h5>
+					<table class="table table-striped table-bordered table-condensed">
+						<tbody>
+							<tr>
+								<td>Catalog</td>
+								<td>Spring 2012</td>
+							</tr>
+							<tr class="read">
+								<td>#Supplier# Order Number</td>
+								<td>AB123</td>
+							</tr>
+							<tr>
+								<td title="dynamic value, myPO if retailer user, Retailer's PO if supplier user.">Retailers PO</td>
+								<td>
+									<div class="read">Fred's Order</div>
+									<div class="write "><input type="text" class="input-large" placeholder="Your PO"></div>
+								</td>
+							</tr>
+							<tr>
+								<td>Requested Ship Date</td>
+								<td>
+									<div class="read">Aug 31, 2012</div>
+									<div class="write "><input type="text" placeholder="Aug 31, 2012"></div>
+								</td>
+							</tr>
+							<tr>
+								<td>Cancel Date</td>
+								<td>
+									<div class="read">Sep 10, 2012</div>
+									<div class="write "><input type="text" placeholder="Aug 31, 2012"></div>
+								</td>
+							</tr>
+							<tr>
+								<td>Requested Shipment Method</td>
+								<td>
+									<div class="read">Fed Ex 2nd Day</div>
+									<div class="write ">
+										<select>
+										  <option selected>Please Select a Ship Method</option>
+										  <option>Fed Ex Next Day</option>
+										  <option>Fed Ex 2nd Day</option>
+										  <option>Fed Ex Ground</option>
+										  <option>Fed Ex - 2nd Day Collect</option>
+										</select>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>Comments</td>
+								<td>
+									<div class="read">What we talked about last week.</div>
+									<div class="write "><textarea></textarea></div>
+								</td>
+							</tr>
+							<tr>
+								<td>Supplier Customization One</td>
+								<td>
+									<div class="read">Some Value</div>
+									<div class="write "><input type="text" placeholder="Some Value"></div>
+								</td>
+							</tr>
+							<tr>
+								<td>Supplier Customization Two</td>
+								<td>
+									<div class="read">Some Value</div>
+									<div class="write "><input type="text" placeholder="Some Value"></div>
+								</td>
+							</tr>
+						</tbody>
+					</table>	
+
+				</div>
+				<div class="span6">
+					<h5>Summary</h5>
+					<table class="table table-striped table-bordered table-condensed">
+						<tbody>
+							<tr>
+								<td>Total Units</td>
+								<td>8</td>
+							</tr>
+							<tr>
+								<td>Order Total</td>
+								<td>$440.00</td>
+							</tr>
+							<tr>
+								<td>Discount (if applicable)</td>
+								<td>$40.00</td>
+							</tr>
+							<tr>
+								<td>Custom Charges line</td>
+								<td>$10.50</td>
+							</tr>
+							<tr>
+								<td>Revised Order Total</td>
+								<td>$410.50</td>
+							</tr>
+						</tbody>
+					</table>	
+
+				</div>
+				
+		</div>
+
+			
+	<div class="row-fluid">
+	<h5>Product Information</h5>
+		 Sort by: 
+		<div class="btn-toolbar">
+			 <div class="btn-group">
+				  <a class="btn btn-info sortbutton" onclick="togglenav()">Catalog</a>
+				  <a class="btn sortbutton" onclick="togglenav()">Order</a>
+			</div>
+			<div class="btn-group">
+				  <a class="btn" href="#"><i class="icon-zoom-in"></i> Order Preview</a>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row-fluid">
+	<div class="span12">
+		<table class="table table-hover table-bordered">
+				<thead>
+					<tr>
+						<th class="small">Number</th>
+						<th class="small">Product</th>
+						<th class="small">Color</th>
+						<th class="small">Color Code</th>
+						<th class="small">Size</th>
+						<th class="small">VSize</th>
+						<th class="small">SKU</th>
+						<th class="small">Ordered</th>
+						<th class="read small">Accepted</th>
+						<th class="read small">Back Ordered</th>
+						<th class="read small">Cancelled</th>
+						<th class="read small">Shipped</th>
+						<th class="write small">Catalog Price</th>
+						<th class="small">Ordered Price</th>
+						<th class="small">Last Edited</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr id="navigationDemo">
+						<td colspan="15">
+								<ul class="breadcrumb">
+								  <li>Men's</a> <span class="divider">/</span></li>
+								  <li>Pants</a> 
+								</ul>
+						</td>
+					</tr>
+					<tr>
+						<td>2112272BK</td>
+						<td>INDUSTRIAL MULTI-USE POCKET PANT</td>
+						<td>Black</td>
+						<td>Black</td>
+						<td>Tall</td>
+						<td>L</td>
+						<td>2112272BK30 UL</td>
+						<td>4</td>
+						<td class="read">4</td>
+						<td class="read">0</td>
+						<td class="read">0</td>
+						<td class="read">0</td>
+						<td class="write">$215.00</td>
+						<td>$215.00</td>
+						<td>Sep 12, 2012</td>
+					</tr>
+					<tr>
+						<td>2112272BK38 UL</td>
+						<td>INDUSTRIAL MULTI-USE POCKET PANT</td>
+						<td>Black</td>
+						<td>Black</td>
+						<td>Tall</td>
+						<td>L</td>
+						<td>2112272BK30 UL</td>
+						<td>4</td>
+						<td class="read">4</td>
+						<td class="read">0</td>
+						<td class="read">0</td>
+						<td class="read">0</td>
+						<td class="write"><del>$250.00</del>$215.00</td>
+						<td>$215.00</td>
+						<td>Sep 12, 2012</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div class="row-fluid">
+		<div class="offset3 span6">
+		<h4>Order Category Summary</h4>
+
+		<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Category</th>
+						<th>Qty Ordered</th>
+						<th>Total</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+								<ul class="breadcrumb">
+								  <li>Men's</a> <span class="divider">/</span></li>
+								  <li>Pants</a></li>
+								</ul>
+						</td>
+						<td>8</td>
+						<td>$440.00</td>
+					</tr>
+					<tr>
+						<td>Order Total</td>
+						<td>8</td>
+						<td>$440.00</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div class="row-fluid read" title="We should use some logic here, if the order is open, don't show open, etc.">
+		<div class="offset3 span4">
+			<form>
+				<legend>Modify #application name# Order Status</legend>
+			  <span class="help-block">Update order status by selecting an option below. Making a change in this application will not have any impact on the order in the supplier system.</span>
+			  <label class="radio">
+				<input type="Radio"> Mark this Order as Open
+			  </label>
+			  <label class="radio">
+				<input type="Radio"> Mark this Order as Closed
+			  </label>
+			  <label class="radio">
+				<input type="Radio"> Mark this Order as Cancelled
+			  </label>
+			  <label class="radio" title="This is a supplier only value, it should only show for supplier users.">
+				<input type="Radio"> Retransmit this Order
+			  </label>
+			  <button type="submit" class="btn">Submit</button>
+			</form>
+		</div>
+	</div>
+
+	
+	
+	<div class="row-fluid ">
+		<div class="span6 offset3">
+			<a href="orderList1_a.html" class="btn btn-primary read">Return to Order List</a>
+			<a href="orderList1_a.html" class="btn btn-primary btn-large btn-block write">Submit Order</a>
+		</div>
+	</div>	
+	
+	<div class="row-fluid">
+		<div class="span12">
+			<h5>Transaction History <a onclick="toggleTransaction()"><i class="icon-eye-close"></i></a></h5> 
+			<p class="small"><input type="checkbox"> include transaction information in print/pdf document</p>
+		</div>
+	</div>
+	<div class="row-fluid">
+		<div class="span12 transactions">
+					<table class="table table-striped table-bordered">
+						<thead>
+							<tr>
+								<th>Action</th>
+								<th>Date</th>
+								<th>Resource</th>
+								<th>Document</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Created</td>
+								<td>Jul 1, 2012 14:46</td>
+								<td colspan="2">John Q Rep</td>
+							</tr>
+							<tr  class="read">
+								<td>Submitted</td>
+								<td>Jul 1, 2012 14:52</td>
+								<td colspan="2">John Q Rep</td>
+							</tr>
+							<tr  class="read">
+								<td>Transmitted</td>
+								<td>Jul 1, 2012 14:52</td>
+								<td colspan="2">System</td>
+							</tr>
+							<tr class="read">
+								<td>Acknowledgement Received</td>
+								<td>Jul 2, 2012 01:46</td>
+								<td>System</td>
+								<td><a href="#">View Document</a></td>
+							</tr>
+							<tr class="read">
+								<td>Shipping Document Received</td>
+								<td>Aug 12, 2012 14:46</td>
+								<td>System</td>
+								<td><a href="#">View Document</a></td>
+							</tr>
+						</tbody>
+					</table>
+		</div>
+	</div>
+	
+	
+
+	
+	</div>
+
+	<div class="row-fluid">
+		<a href="#" onclick="ShowCheckoutMode()" class="btn">Toggle Mode</a>	
+	</div>
+
+	</body>
+</html>
+

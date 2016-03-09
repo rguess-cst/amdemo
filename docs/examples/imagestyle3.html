@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>AM Image Style</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+	<link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../assets/css/glyphicons.css" rel="stylesheet">
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  </head>
+
+<!--- script includes are at bottom --->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+	<script src="../../js/jquery-ui-1.8.13.custom.min.js"></script>
+	<link href="../../jquery_ui_themes.1.8.13/ui-lightness/jquery-ui-1.8.13.custom.css">
+	<script src="../../js/divController.js"></script>
+
+<style>
+	.black_overlay{
+		display: none;
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		width: 100%;
+		height: 100%;
+		background-color: black;
+		z-index:1001;
+		-moz-opacity: 0.8;
+		opacity:.20;
+		filter: alpha(opacity=20);
+	}
+	
+
+.orderDisplayTable th
+{
+	text-align: center;
+	vertical-align: middle;
+}	
+
+.orderDisplayTable td
+{
+	text-align: center;
+	vertical-align: middle;
+
+}	
+
+img.gridImageDisplay {
+	vertical-align: middle;
+    max-height: 200px;
+}
+
+img.listImageDisplay {
+	vertical-align: middle;
+    max-height: 50px;
+}
+</style>
+	
+
+  <script language="javascript">
+
+  
+	$(document).ready(function()
+	{
+		//$('#catalogPick').change(function() 
+		//{
+		 //  $(".download").toggle();
+		//});
+		//$("#searchdiv").draggable();
+	}
+	);
+
+	function makeitso()
+	{
+		$('.changeit gridImageDisplay').toggleClass("listImageDisplay");
+	}
+	
+  </script>
+  
+<!---   $("p").mouseover(function () {
+    $(this).css("color","red");
+  }); 
+  
+  pants
+  
+  --->
+  
+  <body>
+  
+<div class="container">
+	<div class="row">
+		<div class="image-0">
+			<img class="blowout changeit gridImageDisplay" src="../../img/0001_BLACK__200.png"><p>image-0</p>
+		</div>
+		<div class="image-0">
+		<p>image-0 (display: none;)</p>
+		</div>
+		<div class="image-1">
+			<img class="blowout changeit gridImageDisplay" src="../../img/0001_BLACK__200.png"><p>image-1</p>
+		</div>
+		<div class="image-2">
+			<img class="blowout changeit gridImageDisplay" src="../../img/0001_BLACK__200.png"><p>image-2</p>
+		</div>
+		<div class="image-3">
+			<img class="blowout changeit gridImageDisplay" src="../../img/0001_BLACK__200.png"><p>image-3</p>
+		</div>
+		<div>
+			<p><i class="glyphicons-icon ban"></i></p>
+			<p>image-none</p>
+		</div>
+		
+	</div>
+
+</div>
+
+
+</body>
+</html>
+

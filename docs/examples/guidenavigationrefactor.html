@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>iVendix - Multi Path</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+	<link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../assets/css/glyphicons.css" rel="stylesheet">
+   <link href="../assets/css/halflings.css" rel="stylesheet">
+
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+  </head>
+
+
+
+<!--- script includes are at bottom --->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+	<script src="../../js/jquery-ui-1.8.13.custom.min.js"></script>
+	<link href="../../jquery_ui_themes.1.8.13/ui-lightness/jquery-ui-1.8.13.custom.css">
+	<script src="../../js/divController.js"></script>
+
+
+  <script language="javascript">
+
+	$(document).ready(function()
+	{
+		return;
+	}
+	);
+	
+	function hideCollections()
+	{
+		$(".collections").hide();
+	}
+	function showCollections()
+	{
+		$(".collections").show();
+	}
+
+
+  </script>
+
+ 
+  <body>
+
+<div class="container-fluid" id="Guide_FullContainer">
+	<div class="row-fluid" id="Guide_TopMenu" style="">
+	
+		<div class="span6 tabbable" id="Guide_ModuleButtons">
+		  <ul class="nav nav-tabs guideNav">
+			<li class="active AC"><a href="#" data-module="Guide_ProductArea" data-toggle="tab" title="Find Products" ><i class="glyphicons-icon book"></i><br>Catalog<br><span class="badge badge-important" style="visibility: hidden;">11</span></a>
+				</li>
+			<li class="AC">
+			<a href="#" data-module="Guide_Cart" data-toggle="tab" title="Enter quantities, select shipments."><i class="glyphicons-icon shopping_cart"></i><br>Cart<br><span class="badge badge-important">11</span></a>
+			</li>
+			<li class="AC"><a href="#" data-module="Guide_Views" data-toggle="tab" title="Merchandise your order"><i class="glyphicons-icon camera"></i><br>Views<br><span class="badge badge-important" style="visibility: hidden;">11</span></a></li>
+			<li><a href="#" data-module="Guide_Checkout" data-toggle="tab" title="Submit the order."><i class="glyphicons-icon play"></i><br>Checkout<br><span class="badge badge-important" style="visibility: hidden;">11</span></a></li>
+		  </ul>
+
+		</div>	
+		<div class="span4">
+			<span style="font-weight: bolder;">Retailer Name, Store</span><br>
+			Active Catalog <span style="font-weight: bolder;">Spring 14 Preseason</span><br>
+		</div>
+		
+
+<div class="span1">
+	<a href="#" data-fn="toggleMenu" data-toggle="tab" title="Return to main application."><i class="icon-arrow-up"></i> Menu</a>
+</div>		
+<div class="span1"><a href="#"><i data-fn="GuideProductMenu" data-btn="searchSettings" title="Modify search settings" id="guideSearchSetCog" class="glyphicons-icon cogwheels"></i></a></div>
+
+	</div>
+
+
+
+	<div class="row-fluid" id="Guide_ProductArea" style="display: block; padding-bottom: 20px;">
+			<div class="btn-group span4">
+				<button class="btn btn-primary" onclick="showCollections()"><i class="halflings-icon white tags" data-fn="GuideProductMenu" data-btn="showCollections"></i>Collections</button>
+				<button class="btn"><i class="halflings-icon globe"></i>Categories</button>
+				<button class="btn"><i class="halflings-icon uni-bookmark"></i>Pages</button>
+			</div>
+			<div class="span4">
+			  <input class="input-large search-query" id="Guide_SearchValue" name="appendedInputButton" type="text" placeholder="Enter product information.">
+			  <button class="btn" type="button" data-fn="GuideProductMenu" data-btn="prodSearch">Search</button>
+			</div>
+			<div class="span1 offset3">
+<button class="btn"><i class="halflings-icon filter"></i><b class="caret"></b></a></button>
+							<ul class="dropdown-menu" id="Guide_ColorStoryFilter">
+									<li data-fn="CSFilter" data-id="0"><i class="glyphicons-icon sampler"></i>Color Stories</li>
+									<li><a href="#" data-fn="CSFilter" data-id="33">Browns</a></li>	
+									<li><a href="#" data-fn="CSFilter" data-id="14">green as the grass on the other side</a></li>	
+									<li><a href="#" data-fn="CSFilter" data-id="12">radio flyer red</a></li>	
+									<li><a href="#" data-fn="CSFilter" data-id="7">Walking Dead</a></li>	
+									<li class="divider"></li>
+							</ul>
+			</div>
+	</div>
+
+
+
+
+
+	<div class="row-fluid" id="Guide_ProductArea" style="display: none;">
+		<div class="span12">
+			<ul class="nav nav-tabs" id="Guide_NavButts">
+				<li class="active">
+					<a href="#" title="Brows collections created by the supplier." >
+					<i class="glyphicons-icon  tags" data-fn="GuideProductMenu" data-btn="showCollections"></i></a> 	
+				</li>
+
+					  <li><a href="#" data-fn="GuideProductMenu" data-btn="catNavigation" title="Browse Catalog Navigation"><i class="glyphicons-icon globe"></i></a>
+					  </li>
+					  <li><a href="#" data-fn="GuideProductMenu" data-btn="catPages" title="Flip through the pages of the printed catalog"><i class="glyphicons-icon book_open"></i> </a></li>
+					  <li>
+						
+						  <input class="input-large search-query" id="Guide_SearchValue" name="appendedInputButton" type="text" placeholder="Enter product information.">
+						  <button class="btn" type="button" data-fn="GuideProductMenu" data-btn="prodSearch">Search</button>
+						
+					  </li>
+					  <li id="Guide_CSFilterOptions" class="dropdown pull-right">
+					  <a class="dropdown-toggle" data-toggle="dropdown" href="#" title="Filter products on screen by the selected critiera.">
+					  <i class="glyphicons-icon filter"></i><b class="caret"></b></a>
+							<ul class="dropdown-menu" id="Guide_ColorStoryFilter">
+									<li data-fn="CSFilter" data-id="0"><i class="glyphicons-icon sampler"></i>Color Stories</li>
+									<li><a href="#" data-fn="CSFilter" data-id="33">Browns</a></li>	
+									<li><a href="#" data-fn="CSFilter" data-id="14">green as the grass on the other side</a></li>	
+									<li><a href="#" data-fn="CSFilter" data-id="12">radio flyer red</a></li>	
+									<li><a href="#" data-fn="CSFilter" data-id="7">Walking Dead</a></li>	
+									<li class="divider"></li>
+							</ul>
+					  </li>
+
+			</ul>
+		</div>
+
+	</div>
+	
+<div class="well span10 offset1 collections" style="z-index: 100000; position: absolute; top 0px;">
+	<div class="row-fluid">
+		<div class="span12">
+			<div class="span6">
+				<h6>Click on a collection to see more details</h6>
+			</div>
+			<div class="span5">
+				<span class="label" title="Filter visible collections"><i class="icon-filter icon-white"></i></span>
+				<span class="btn-group">
+					<a style="cursor:pointer" data-fn="setCollFilter" data-id="favFilter" class="btn grpcollFilt btn-info" href="#" title="My Favorites"><i class="icon-star"></i></a>
+					<a style="cursor:pointer" data-fn="setCollFilter" data-id="myFilter" class="btn grpcollFilt" href="#" title="Only my collections"><i class="icon-user"></i></a>
+				</span>
+			</div>
+			<div class="span1">
+				<a href="#" onclick="hideCollections()"><i class="halflings-icon remove"></i></a>
+			</div>
+		</div>
+	</div>
+	<div class="row-fluid">
+		<div class="span2 collDiv fav_1 mine_1">
+				<a href="#" data-fn="GuideProductMenu" data-btn="showCollCover" data-id="1145867" title="1145867">	
+					<img src="../../img/Zara-Fall-Winter-2013-Mens-Collection-1.jpg">
+					Men's Fall Collection 
+				</a>
+				<p>Jan, 21 / 1 Product / 2 Units / $ 15.00</p>
+		</div>
+		<div class="span2 collDiv fav_1 mine_1">
+				<a href="#" data-fn="GuideProductMenu" data-btn="showCollCover" data-id="1145867" title="1145867">	
+					<img src="../../img/Zara-Fall-Winter-2013-Mens-Collection-3.jpg">
+					Men's Winter Collection 
+				</a>
+				<p>Feb, 21 / 2 Product / 4 Units / $ 30.00<br>
+				Mar, 21 / 2 Product / 4 Units / $ 30.00
+				</p>
+		</div>
+	</div>
+</div>
+
+	<div class="row-fluid" id="Guide_ProductArea" style="display: block;">
+	<div class="span2"><span class="label label-success pull-left">Displaying: Men's Fall Collection </span>
+		</div>
+	<div class="span6">
+		<div id="SRPagination">
+			<div class=" btn-group"><a href="#" class="disabled btn"><i title="Prev" class="icon-step-backward"></i></a><a href="#" data-page="1" class="pagbutton  btn btn-info">1</a><a href="#" data-page="2" class="pagbutton  btn">2</a><a href="#" class="btn pageNext"><i title="Next" class="icon-step-forward"></i></a></div>			
+		</div>
+	</div>
+		<div class=" span2 grpIVMenuItem" id="mgSRAddAll">
+			<a id="menuSRAddAll" class="btn" title="Add all visible products to the order" href="#">
+			<i class="icon-plus"></i> Add All</a>
+		</div>		
+	<div class="span2"><span class="label label-success pull-right">Filtered: Green/Clue Color Story <i class="halflings-icon remove white"></i></span>
+		</div>
+	</div>
+	<div class="row-fluid AC">
+		<h2>Fall 2014</h2>
+		<div class="span12">
+			<img src="../../img/peart.jpg">
+		</div>
+
+	</div>
+
+
+	</div>
+
+</div>
+
+  </body>
+</html>
+

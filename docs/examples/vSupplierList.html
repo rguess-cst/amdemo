@@ -1,0 +1,221 @@
+<style>
+#CatalogDetails
+{
+width:250px;
+height:50px;
+background:#aaaaaa;
+overflow-x:hidden;
+overflow-y:auto;
+transition:width 2s, height 2s;
+-moz-transition:width 2s, height 2s, -moz-transform 2s; /* Firefox 4 */
+-webkit-transition:width 2s, height 2s, -webkit-transform 2s; /* Safari and Chrome */
+-o-transition:width 2s, height 2s, -o-transform 2s; /* Opera */
+}
+
+#CatalogDetails:hover
+{
+width:400px;
+height:800px;
+
+}
+</style>
+<script language="javascript">
+	var theCatalogs = null;
+	var catView = null;
+	var orderHeaders=null;
+	$(document).ready(function() {
+		$("#CatalogDetails").css("position","absolute").offset({top:200,left:300});
+		
+		Catalog = Backbone.RelationalModel.extend({
+			idAttribute: "Catalog_ID"
+		});
+		
+		Catalogs = Backbone.Collection.extend({
+			model: Catalog
+		});
+		OrderHeader = Backbone.RelationalModel.extend({
+			idAttribute: "Order_ID"
+		});
+		
+		OrderHeaders = Backbone.Collection.extend({
+			model: OrderHeader
+		});
+		OrderHeaderView = Backbone.View.extend({
+			initialize: function() {
+			},
+		
+			render: function() {
+				$(this.el).html(_.template($("#template-OrderHeaderList").html(),{orderHeader: this.model}));
+				return this;
+			}
+			});
+
+		CatalogViewDetail = Backbone.View.extend({
+			initialize: function() {
+			},
+		
+			render: function() {
+				$(this.el).html(_.template($("#template-CatalogDetails").html(),{catalog: this.model}));
+				
+				return this;
+			}
+			});
+
+		CatalogView = Backbone.View.extend({
+			initialize: function() {
+			},
+		
+			render: function() {
+				$(this.el).html(_.template($("#template-CatalogList").html(),{catalogs: this.model}));
+				
+				return this;
+			},
+			
+			events: {
+				"mouseover": "handleMouseOver",
+				"click a":"handleClick"
+				},
+				
+			handleMouseOver: function(e) {
+				var cat = this.model.get($(e.target).attr("cid"));
+				if (cat) {
+					var catDet = new CatalogViewDetail({
+						el: $("#CatalogDetails"),
+						model: cat
+					});
+					var os = $(e.target).offset();
+					$("#CatalogDetails").offset({
+						top: os.top,
+						left: os.left + 300
+					});
+					//$("#OrderHeadersList").hide();
+					catDet.render();
+					
+				}
+			/*	alert("Catalog_ID: " + cat.get("Catalog_ID")
+					+ "\n" + "Catalog: " + cat.get("Catalog")
+					+ "\n" + "StartDate: " + cat.get("StartDate")
+					+ "\n" + "EndDate: " + cat.get("EndDate"));
+			*/
+			
+			},
+				handleClick: function(e) {
+					var os = $(e.target).offset();
+					$("#OrderHeadersList").offset({
+						top: os.top,
+						left: os.left + 600
+					});
+					$("#OrderHeadersList").show();
+				$.ajax({
+					url: "/coldbox/Prototype/index.cfm/hSupplierDemo/getOrderHeadersJson?Catalog_ID=" + $(e.target).attr("cid"),
+					dataType: "json",
+					success: function(data) {
+						if(!orderHeaders) {
+							orderHeaders = new OrderHeaders(data);
+							orderHeaderView = new OrderHeaderView({el: $("#OrderHeadersList"), model: orderHeaders});
+							orderHeaderView.render();
+						} else {
+							orderHeaders.reset(data);
+							orderHeaderView.render();
+						}
+					}
+				});
+			}
+		});
+
+		Supplier = Backbone.RelationalModel.extend({
+			idAttribute: "Supplier_ID"
+		});
+		
+		Suppliers = Backbone.Collection.extend({
+			model: Supplier
+		});
+
+		SupplierView = Backbone.View.extend({
+			initialize: function() {
+			},
+		
+			render: function() {
+				$(this.el).html(_.template($("#template-SupplierList").html(),{suppliers: this.model}));
+				
+				return this;
+			},
+			
+			events: {
+				"click a": "handleClick"
+				},
+				
+			handleClick: function(e) {
+				$.ajax({
+					url: "/coldbox/Prototype/index.cfm/hSupplierDemo/getCatalogs?Supplier_ID=" + $(e.target).attr("cid"),
+					dataType: "json",
+					success: function(data) {
+						if(!theCatalogs) {
+							theCatalogs = new Catalogs(data);
+							catView = new CatalogView({el: $("#CatalogList"), model: theCatalogs});
+							catView.render();
+						} else {
+							theCatalogs.reset(data);
+							catView.render();
+						}
+					}
+				});
+			}
+		});
+
+		// load supplier list
+		$.ajax({
+			url: "/coldbox/Prototype/index.cfm/hSupplierDemo/getSuppliers",
+			dataType: "json",
+			success: function(data) {
+				var supps = new Suppliers(data);
+				var suppView = new SupplierView({el: $("#SupplierList"), model: supps});
+				suppView.render();
+			}
+		});
+	});
+</script>
+<div id="SupplierList"></div>
+<div id="CatalogList"></div>
+<div id="CatalogDetails"></div>
+<div id="OrderHeadersList"></div>
+<script type="text/template" id="template-SupplierList">
+	<p>Please select a supplier.</p>
+	<ol>
+		  <%
+			suppliers.each(function(supp) {
+				print('<li><a cid="' + supp.get("Company_ID") + '">' + supp.get("CompanyName") + '</a></li>');
+			});
+		  %>
+	</ol>
+</script>
+<script type="text/template" id="template-CatalogList">
+	<p>Please select a catalog.</p>
+	<ol>
+		  <%
+			catalogs.each(function(cat) {
+				print('<li><a cid="' + cat.get("Catalog_ID") + '">' + cat.get("Catalog") + '</a></li>');
+			});
+		  %>
+	</ol>
+</script>
+<script type="text/template" id="template-OrderHeaderList">
+	<p>Please select an Order.</p>
+	
+	<ol>
+		  <%
+			orderHeaders.each(function(ord) {
+				print('<li><a oid="' + ord.get("Order_ID") + '">' + ord.get("Order_ID")+" " +ord.get("OrderName") + '</a></li>');
+			});
+		  %>
+	</ol>
+</script>
+<script type="text/template" id="template-CatalogDetails">
+	  <%
+	  	//console.log(catalog.attributes);
+	 	for(i in catalog.attributes){
+		print( i+": "+ catalog.get(i)+"<br/>");
+		};
+		  %>
+	
+</script>
