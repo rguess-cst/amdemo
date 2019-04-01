@@ -2,7 +2,7 @@
 name: Found a BUG
 about: This is an error in the way the application works, not a data issue.
 title: ''
-labels: ''
+labels: wontfix
 assignees: ''
 
 ---
