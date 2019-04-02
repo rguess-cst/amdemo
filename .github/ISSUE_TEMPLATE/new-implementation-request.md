@@ -1,6 +1,6 @@
 ---
-name: 1. This isn't an enhancement or a bug, something else...
-about: Not sure where to start? start here.
+name: New Implementation Request
+about: We have a new client!
 title: "[client name] - New Client Request"
 labels: Implementation Parent
 assignees: ''

@@ -1,6 +1,6 @@
 ---
-name: 1. This isn't an enhancement or a bug, something else...
-about: Not sure where to start? start here.
+name: 1. New Implementation Request
+about: We have a new client!
 title: "[client name] - New Client Request"
 labels: Implementation Parent
 assignees: ''
@@ -8,10 +8,8 @@ assignees: ''
 ---
 
 - [ ] What is the name of the client? 
-{ Client Name ]
 
 - [ ] Do you have a company logo?
-*If yes, add it here*
 
 - [ ] Do they have custom data?
 
