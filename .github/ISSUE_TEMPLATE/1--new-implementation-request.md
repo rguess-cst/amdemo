@@ -10,10 +10,10 @@ assignees: ''
 - [ ] What is the name of the client? 
 
 **Theme**
-- [ ] Logo
-- [ ] Login Background Image
-- [ ] Favicon
-- [ ] Brand Color
+1. - [ ] Logo
+1. - [ ] Login Background Image
+1. - [ ] Favicon
+1. - [ ] Brand Color
 
 - [ ] Do they have custom data? (If no, please delete)
 
