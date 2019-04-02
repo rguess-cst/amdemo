@@ -15,11 +15,12 @@ assignees: ''
 1. - [ ] Favicon
 1. - [ ] Brand Color
 
-- [ ] Do they have custom data? (If no, please delete)
-
+**Base DEV steps**
 1. - [ ] BETA FTP Site Established
 1. - [ ] Base spice created
 1. - [ ] Client settings established
+
+- [ ] Do they have custom data? (If no, please delete)
 
 **Expected Files**
 1. - [ ] Catalog Master
