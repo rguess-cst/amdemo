@@ -1,7 +1,7 @@
 ---
 name: 1. New Implementation Request
 about: We have a new client!
-title: "[client name] - New Client Request"
+title: "[client name] - New Client Parent Request"
 labels: Implementation Parent
 assignees: ''
 
@@ -9,9 +9,13 @@ assignees: ''
 
 - [ ] What is the name of the client? 
 
-- [ ] Do you have a company logo?
+**Theme**
+- [ ] Logo
+- [ ] Login Background Image
+- [ ] Favicon
+- [ ] Brand Color
 
-- [ ] Do they have custom data?
+- [ ] Do they have custom data? (If no, please delete)
 
 1. - [ ] BETA FTP Site Established
 1. - [ ] Base spice created
@@ -32,7 +36,7 @@ assignees: ''
 1. - [ ] Inventory
 1. - [ ] Order History
 
-**Supplemental Files**
+**Supplemental Files**  (If no, please delete)
 1. - [ ] Related Products
 1. - [ ] Technology
 1. - [ ] Technology Mapping
