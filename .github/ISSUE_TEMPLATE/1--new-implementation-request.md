@@ -9,6 +9,9 @@ assignees: ''
 
 - [ ] What is the name of the client? 
 
+- [ ] What value should be used for the URL ({clientname}.elasticsuite.com) 
+
+
 **Theme**
 1. - [ ] Logo
 1. - [ ] Login Background Image
