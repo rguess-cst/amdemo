@@ -1,20 +1,24 @@
 ---
 name: 2. Enhancement Request
 about: The listed client has requested a new features.
-title: "[Client Name] - General Description"
-labels: ''
+title: "[Client Name] - General Description of the request"
+labels: enhancement
 assignees: ''
 
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+**Are we solving a specific problem for a client?**
+If no, delete these 2 lines, if YES, please describe the actual issue. Screens shots, captures, etc. welcome.
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+**What is being proposed?**
+What do you want us to build?
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+Who is it for?
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+How big of a project do you think it is?
+
+**Do you have any artifacts?**
+e.g. An Elastic Suite enhancement document. Screen shots. Drawing on a napkin. Anything you have can only help.
+
+**User Acceptance Criteria**
+If this features does _this_, it will make users happy!

@@ -2,7 +2,7 @@
 name: 1. New Implementation Request
 about: We have a new client!
 title: "[client name] - New Client Parent Request"
-labels: Implementation Parent
+labels: On Board
 assignees: ''
 
 ---
